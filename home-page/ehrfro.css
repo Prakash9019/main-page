@@ -1,0 +1,152 @@
+/*for small screens*/
+
+
+/* .ig{
+    background-image: url("https://thumbs.dreamstime.com/b/ehr-electronic-health-record-emr-medical-automation-system-medicine-internet-concept-doctor-stethoscope-160450571.jpg");
+    background-repeat: repeat;
+    /* opacity: 0.5; 
+} */
+
+/*body{
+    background-color:  rgba(18, 146, 214, 0.436);
+}*/
+.head{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between; 
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+}
+.left{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+}
+.right{
+    float: right;
+    padding: 10px 10px 10px 450px;
+}
+.right ul{
+    display: flex;
+    padding: 10px 10px 10px 10px;
+    list-style-type: none;
+    color: black;
+}
+.right li{
+    padding: 10px 10px 10px 10px;
+    margin-right: 20px;
+    border-radius: 5px;
+    border:2px solid  black;
+    background-color: rgba(18, 146, 214, 0.436);
+    font-size: x-large;
+}
+.right li:hover{
+    background-color: rgb(163, 163, 163);
+}
+.right ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.container{
+    padding: auto;
+}
+
+.slide-wrapper{
+    position: relative;
+    max-width: 1000px;
+    max-height: 700px;
+    padding: 100px 100px 100px 250px;
+}
+
+.slider{
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: hidden;
+    /*scroll-snap-type: x;
+    scroll-behavior: smooth;*/
+}
+
+
+.slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+    border-radius: 2%;
+}
+
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left:50%;
+    transform: translate(-50%);
+    z-index: 1;
+}
+
+.slider-nav a{
+    border-radius: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: black;
+    transition: opacity ease-out 250ms;
+}
+
+.slider-nav a:hover{
+    opacity: 0.5;
+}
+
+
+
+.p1right{
+    text-align: center;
+    padding: 105px 25px 25px 25px;
+    color: red;
+}
+#m12{
+    padding:0px 250px 5px 5px; 
+    border-radius: 100%;
+}
+.para,.para1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 10px 10px 10px;
+}
+.pleft{
+    padding: 20px 40px 10px 30px;
+    width:900px;
+    height: 200px;
+}
+.p1{
+    font-family:cursive;
+    font-size: x-large;
+    text-decoration: none;
+}
+#img2{
+    border-radius: 200px;
+}
+
+
+.foot{
+    background-color: black;
+    height:350px;
+}
+.foot ul{
+    display: block;
+    line-height: 60px;
+}
+.foot li{
+    font-size: x-large;
+    list-style-type: none;
+    color:white;
+}
+.foot ul li a{
+    text-decoration: none;
+    color: white;
+}
+.foot ul li i:hover{
+    color: beige;
+}
