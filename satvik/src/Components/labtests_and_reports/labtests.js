@@ -3,33 +3,15 @@ import React from 'react'
 const labtests = () => {
   return (
     <nav>
-    <div class="top-layout">
-        <div class="t-left">
-            <img src="/images/logo-main.png" alt="logo"/>
-            <div class="title">Electronic Health Record</div>
+   
+    <div className="labtests">
+        <div className="row">
+        <Link className="labtest-list" to='/labtestcategories.html#bt1'>Blood Tests</Link>
+        <Link className="labtest-list" to='/labtestcategories.html#bt2'>Kidney tests</Link>
         </div>
-        <div class="t-right">
-            <div class="t-home" onclick="location.href='/main.html';">Home</div>
-            <div class="t-About">About Us</div>
-        </div>
-    </div>
-    <div class="left-layout">
-        <div class="left-section-link">
-            <div class="Demograph" onclick="location.href='/demographs.html';">Profile</div>
-            <div class="vital" onclick="location.href='/vital_sign/vitalsigns.html';">Vital Signs</div>
-            <div class="lab-test" onclick="location.href='/labtests_and_reports/labtests.html';">Lab tests</div>
-            <div class="Medical" onclick="location.href='labreports.html#crp';">Medical Records</div>
-            <div class="medications" onclick="location.href='labreports.html#crp';">Medicaions</div>
-        </div>
-    </div>
-    <div class="labtests">
-        <div class="row">
-        <div class="labtest-list" onclick="location.href='labtestcategories.html#bt1';">Blood Tests</div>
-        <div class="labtest-list" onclick="location.href='labtestcategories.html#bt2';">Kidney tests</div>
-        </div>
-        <div class="row">
-        <div class="labtest-list" onclick="location.href='labtestcategories.html#bt3';">Thyroid function test</div>
-        <div class="labtest-list" onclick="location.href='labtestcategories.html#bt4';">Urinanalysis</div>
+        <div className="row">
+        <Link className="labtest-list" to='/labtestcategories.html#bt3'>Thyroid function test</Link>
+        <Link className="labtest-list" to='/labtestcategories.html#bt4'>Urinanalysis</Link>
         </div>
     </div>
     

@@ -2,26 +2,8 @@ import React from 'react'
 
 const Labreports = () =>{
   return (
-    <>
-    <div className="top-layout">
-        <div className="t-left">
-            <img src="/images/logo-main.png" alt="logo"/>
-            <div className="title">Electronic Health Record</div>
-        </div>
-        <div className="t-right">
-            <div className="t-home" onclick="location.href='/main.html';">Home</div>
-            <div className="t-About">About Us</div>
-        </div>
-    </div>
-    <div className="left-layout">
-        <div className="left-section-link">
-            <div className="Demograph" to="/demographs">Profile</div>
-            <div className="vital" onclick="location.href='/vital_sign/vitalsigns.html';">Vital Signs</div>
-            <div className="lab-test" onclick="location.href='/labtests_and_reports/labtests.html';">Lab tests</div>
-            <div className="Medical" onclick="location.href='labreports.html#crp';">Medical Records</div>
-            <div className="medications" onclick="location.href='labreports.html#crp';">Medicaions</div>
-        </div>
-    </div>
+    <nav>
+    
     <form className="myform">
     <div className="labreports" id="crp">
         <p>Enter the crp levels</p>
@@ -224,7 +206,7 @@ const Labreports = () =>{
         <button type="submit">Update</button> 
     </div>
     </form>
-    </>
+    </nav>
   )
 }
 
