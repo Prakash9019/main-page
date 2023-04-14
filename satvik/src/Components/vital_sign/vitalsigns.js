@@ -1,6 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
-const vitalsigns = () => {
+const Vitalsigns = () => {
   return (
     <nav>
        
@@ -16,4 +17,4 @@ const vitalsigns = () => {
   )
 }
 
-export default vitalsigns
+export default Vitalsigns
