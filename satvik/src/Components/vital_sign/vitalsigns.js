@@ -6,7 +6,7 @@ const Vitalsigns = () => {
     <nav>
        
         <div className="row">
-            <Link className="vital-cat" to='/vitalsigndata.html#vt1'>Blood pressure</Link>
+            <Link className="vital-cat" to='/vitalsigndata.html#vt1' onClick={'vitalsigndata.html#vt1'}>Blood pressure</Link>
             <Link className="vital-cat" to='/vitalsigndata.html#vt2'>Pulse Rate</Link>
             </div>
         <div className="row">
