@@ -1,6 +1,6 @@
 import React from 'react'
 
-const vitalsigndata = () => {
+const Vitalsigndata = () => {
   return (
     <nav>
        
@@ -43,4 +43,4 @@ const vitalsigndata = () => {
   )
 }
 
-export default vitalsigndata
+export default Vitalsigndata

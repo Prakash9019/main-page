@@ -3,7 +3,7 @@ import main from "./images/main-page.jpg";
 import ehr from "./images/ehr-symbol.png";
 
 
-const main = () => {
+const Main = () => {
   return (
     <nav>
       
@@ -22,4 +22,4 @@ const main = () => {
   )
 }
 
-export default main;
+export default Main;
