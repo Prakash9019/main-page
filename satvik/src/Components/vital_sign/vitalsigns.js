@@ -5,7 +5,7 @@ const vitalsigns = () => {
     <nav>
         <div class="top-layout">
             <div class="t-left">
-                <img src="/images/logo-main.png" alt="logo">
+                <img src="/images/logo-main.png" alt="logo"/>
                 <div class="title">Electronic Health Record</div>
             </div>
             <div class="t-right">
@@ -30,7 +30,7 @@ const vitalsigns = () => {
             <div class="vital-cat" onclick="location.href='vitalsigndata.html#vt3';">Breathing rate</div>
             <div class="vital-cat" onclick="location.href='vitalsigndata.html#vt4';">Body Temperature</div>
         </div>
-    </nav>>
+    </nav>
   )
 }
 

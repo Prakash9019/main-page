@@ -5,7 +5,7 @@ const vitalsigndata = () => {
     <nav>
         <div class="top-layout">
             <div class="t-left">
-                <img src="/images/logo-main.png" alt="logo">
+                <img src="/images/logo-main.png" alt="logo"/>
                 <div class="title">Electronic Health Record</div>
             </div>
             <div class="t-right">
@@ -24,36 +24,36 @@ const vitalsigndata = () => {
         </div>
         <form class="myform">
             <div class="vital-category-dt" id="vt1">
-                Body Temperature measured by:<input class="form-input" placeholder="measurement" type="text" name="btmeasure" list="btmeasure-list">
+                Body Temperature measured by:<input class="form-input" placeholder="measurement" type="text" name="btmeasure" list="btmeasure-list"/>
                 <datalist class="form-datalist" id="btmeasure-list">
-                <option value="Orally">
-                <option value="Rectally">
-                <option value="Internally">
-                <option value="By ear">
-                <option value="By skin">
-                </datalist><br>
-                Body Temperature:<input class="form-input" type="text" placeholder="Enter body Temperature"><br>
+                <option value="Orally"/>
+                <option value="Rectally"/>
+                <option value="Internally"/>
+                <option value="By ear"/>
+                <option value="By skin"/>
+                </datalist><br/>
+                Body Temperature:<input class="form-input" type="text" placeholder="Enter body Temperature"/><br/>
                 <button type="submit">Update</button>
             </div>
             <div class="vital-category-dt" id="vt2">
-                Pulse Rate:<input type="text" placeholder="Enter your pulse rate" class="form-input"><br>
+                Pulse Rate:<input type="text" placeholder="Enter your pulse rate" class="form-input"/><br/>
                 <button type="submit">Update</button>
-                <br>
+                <br/>
             </div>
             <div class="vital-category-dt" id="vt3">
-                Breathing Rate:<input type="text" placeholder="Enter your breath rate" class="form-input" name="breathing rate"><br>
+                Breathing Rate:<input type="text" placeholder="Enter your breath rate" class="form-input" name="breathing rate"/><br/>
                 <button type="submit">Update</button>
-            <br>
+            <br/>
             </div>
             <div class="vital-category-dt" id="vt4">
-                Blood Pressure:<input type="text" placeholder="Select range" class="form-input" list="bp-list"> 
+                Blood Pressure:<input type="text" placeholder="Select range" class="form-input" list="bp-list"/> 
                 <datalist id="bp-list">
-                    <option value="Normal-120/80">
-                    <option value="Elevated-(120-129)/80">
-                    <option value="Stage1-(130-139)/(80-89)">
-                    <option value="Stage2-(>140)/(>90)">
-                </datalist><br>
-                Breathing Rate:<input type="text" placeholder="Enter your bprate" class="form-input" name="bprate"><br>
+                    <option value="Normal-120/80"/>
+                    <option value="Elevated-(120-129)/80"/>
+                    <option value="Stage1-(130-139)/(80-89)"/>
+                    <option value="Stage2-(>140)/(>90)"/>
+                </datalist><br/>
+                Breathing Rate:<input type="text" placeholder="Enter your bprate" class="form-input" name="bprate"/><br/>
                 <button type="submit">Update</button>
             </div>
     </form>

@@ -5,7 +5,7 @@ const labtests = () => {
     <nav>
     <div class="top-layout">
         <div class="t-left">
-            <img src="/images/logo-main.png" alt="logo">
+            <img src="/images/logo-main.png" alt="logo"/>
             <div class="title">Electronic Health Record</div>
         </div>
         <div class="t-right">
