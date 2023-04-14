@@ -18,7 +18,6 @@ function App() {
       <Route path="vital_sign/vitalsigns.html" element={<Vitalsigns/>} />
        <Route path='labtests_and_reports/labtests.html' element={<Labtests/>} />
     </Routes>
-   <Demographs/>
    </Router>
   );
 }
