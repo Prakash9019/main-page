@@ -4,7 +4,7 @@ import React from 'react';
 const Labtestcategories = () => {
   return (
     <nav>
-    
+
     <div className="labtest-cat" id="bt1">
         <div className="row">
         <Link className="labtest-category" to='/labreports.html#crp'>C-Reactive Protien Test</Link>
