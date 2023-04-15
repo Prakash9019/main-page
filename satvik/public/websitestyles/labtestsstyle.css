@@ -2,6 +2,15 @@
     text-align: center;
     font-size: 15px;
 }
+.labreports,.vital-category-dt{
+    width:450px;
+    margin-top: 10%;
+    padding:15px;
+    box-sizing: border-box;
+    border:2px solid;
+    color:lightgray;
+    background-color: black;
+}
 .labtest-cat,.labreports,.vital-category-dt{
     display:none;
     margin:auto;
