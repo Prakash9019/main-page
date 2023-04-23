@@ -6,6 +6,7 @@ import Leftview from "./Components/Leftview";
 import Main from "./Components/main";
 import Vitalsigns from "./Components/vital_sign/vitalsigns";
 import Labtests from "./Components/labtests_and_reports/labtests";
+import Login from "./Components/login"
 import {BodyTemperature,PulseRate,BreathingRate,BloodPressure} from "./Components/vital_sign/vitalsigndata"
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path="vital_sign/vitalsigns.html/vt3" element={ <BreathingRate />} />
       <Route path="vital_sign/vitalsigns.html/vt4" element={ <BloodPressure />} />
        <Route path='labtests_and_reports/labtests.html' element={<Labtests/>} />
+       <Route path='/login' element={<Login/>} />
     </Routes>
    </Router>
   );

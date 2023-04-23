@@ -5,7 +5,7 @@ const router=express.Router();
 const jwt=require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const fetchuser=require('../fetch');
-const jwt_s="surya";
+const jwt_s="ehr-pro";
 
 // user register
 router.post('/user',[

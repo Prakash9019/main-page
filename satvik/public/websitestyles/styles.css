@@ -1,8 +1,9 @@
+
 #main-page{
     background-image: url("../web-background.avif");
 }
 
-.main-page{
+.main-page{ 
     margin:0;
     padding-top:55px;
     padding-left: 180px;

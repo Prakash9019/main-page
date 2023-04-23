@@ -6,21 +6,20 @@ const NotesSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'             // works as foriegn key for the user.js file
     },
-    title:{
+    Uid:{
+        type:String
+    },
+    name:{
         type: String,
         required: true
     },
-    description:{
+    age:{
         type: String,
         required: true, 
     },
-    tag:{
+    gender:{
         type: String,
-        default: "General"
-    },
-    date:{
-        type: Date,
-        default: Date.now
+        default: "male"
     },
   });
 
