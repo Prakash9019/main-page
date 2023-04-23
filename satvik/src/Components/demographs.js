@@ -1,14 +1,9 @@
-import React, { useContext, useRef, useState } from 'react'
-import noteContext from "../NoteContext"
-import {Link} from 'react-router-dom';
-import imge from "./images/logo-main.png"
+import React, { useContext, useState } from 'react'
+import NoteContext from "../NoteContext"
 
 const Demographs = () => {
     const context = useContext(NoteContext);
     const {addNote} = context;
- 
-    const ref = useRef(null)
-    const refClose = useRef(null)
     const [note, setNote] = useState({name: "", age: "", Uid: "",gender: "",income: ""});
 
     const handleClick = (e)=>{

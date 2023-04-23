@@ -1,15 +1,11 @@
 
-#main-page{
-    background-image: url("../web-background.avif");
-}
-
 .main-page{ 
     margin:0;
     padding-top:55px;
     padding-left: 180px;
     margin-right: 10px;
     font-size:15px;
-    background-image: url(web-background.avif);
+    background-image: url("./n1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;

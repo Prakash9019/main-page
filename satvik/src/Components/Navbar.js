@@ -10,7 +10,7 @@ const Navbar = () => {
             <div className="title">Electronic Health Record</div>
         </div>
         <div className="t-right">
-            <Link className="t-home" to='/main.html'>Home</Link>
+            <Link className="t-home" to='/main'>Home</Link>
             <div className="t-About">About Us</div>
         </div>
     </div>

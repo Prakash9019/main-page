@@ -67,9 +67,9 @@ const BloodPressure = () => {
   
         
 //           <Routes>
-//           <Route path="vital_sign/vitalsigns.html/vt1" element={ <BodyTemperature />} />
-//           <Route path="vital_sign/vitalsigns.html/vt2" element={ <PulseRate />} />
-//           <Route path="vital_sign/vitalsigns.html/vt3" element={ <BreathingRate />} />
+//           <Route path="vital_sign/vitalsigns/vt1" element={ <BodyTemperature />} />
+//           <Route path="vital_sign/vitalsigns/vt2" element={ <PulseRate />} />
+//           <Route path="vital_sign/vitalsigns/vt3" element={ <BreathingRate />} />
 //           </Routes>
     
 //   )

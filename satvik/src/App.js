@@ -16,13 +16,13 @@ function App() {
     <Leftview/>
     <Routes>
       <Route path="/" element={<Main/>} />
-      <Route path="/demographs.html" element={<Demographs/>} />
-      <Route path="vital_sign/vitalsigns.html" element={<Vitalsigns/>} />
-      <Route path="vital_sign/vitalsigns.html/vt1" element={ <BodyTemperature />} />
-      <Route path="vital_sign/vitalsigns.html/vt2" element={ <PulseRate />} />
-      <Route path="vital_sign/vitalsigns.html/vt3" element={ <BreathingRate />} />
-      <Route path="vital_sign/vitalsigns.html/vt4" element={ <BloodPressure />} />
-       <Route path='labtests_and_reports/labtests.html' element={<Labtests/>} />
+      <Route path="/demographs" element={<Demographs/>} />
+      <Route path="/vital_sign/vitalsigns" element={<Vitalsigns/>} />
+      <Route path="/vital_sign/vitalsigns/vt4" element={ <BloodPressure />} />
+      <Route path="/vital_sign/vitalsigns/vt2" element={ <PulseRate />} />
+      <Route path="/vital_sign/vitalsigns/vt3" element={ <BreathingRate />} />
+      <Route path="/vital_sign/vitalsigns/vt1" element={ <BodyTemperature />} />
+       <Route path='/labtests_and_reports/labtests' element={<Labtests/>} />
        <Route path='/login' element={<Login/>} />
     </Routes>
    </Router>
