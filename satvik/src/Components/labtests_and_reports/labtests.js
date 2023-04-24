@@ -1,11 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Link} from 'react-router-dom';
+import { BloodTest,KindeyTest,ThyroidTest,Urinanalysis } from "./labtestcategories";
 
 const labtests = () => {
-  const [currentForm, setCurrentForm] = useState(null);
+
+  const [cf, sc] = useState(null);
 
   const handleClick = (form) => {
-    setCurrentForm(form);
+    sc(form);
   };
   return (
     <nav>
@@ -13,16 +15,16 @@ const labtests = () => {
     <div className="labtests">
         <div className="row">
         <Link className="labtest-list" to='/labtestcategories/bt1' onClick={() => handleClick('formOne')} >Blood Tests</Link>
-        <Link className="labtest-list" onClick={() => handleClick('formOne')}  to='/labtestcategories/bt2'>Kidney tests</Link>
+        <Link className="labtest-list" onClick={() => handleClick('formTwo')}  to='/labtestcategories/bt2'>Kidney tests</Link>
         </div>
         <div className="row">
-        <Link className="labtest-list" onClick={() => handleClick('formOne')} to='/labtestcategories/bt3'>Thyroid function test</Link>
-        <Link className="labtest-list" onClick={() => handleClick('formOne')} to='/labtestcategories/bt4'>Urinanalysis</Link>
+        <Link className="labtest-list" onClick={() => handleClick('formThree')} to='/labtestcategories/bt3'>Thyroid function test</Link>
+        <Link className="labtest-list" onClick={() => handleClick('formFour')} to='/labtestcategories/bt4'>Urinanalysis</Link>
         </div>
-        {currentForm === 'formOne' && <BodyTemperature />}
-         {currentForm === 'formTwo' && <PulseRate />}
-         {currentForm === 'formThree' && <BreathingRate />}
-         {currentForm === 'formFour' && <BloodPressure />}
+        {cf === 'formOne' && <BloodTest />}
+         {cf === 'formTwo' && <KindeyTest />}
+         {cf === 'formThree' && <ThyroidTest />}
+         {cf === 'formFour' && <Urinanalysis />}
     </div>
     
 </nav>
