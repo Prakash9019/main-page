@@ -25,6 +25,9 @@ function App() {
       <Route path="/vital_sign/vitalsigns/vt1" element={ <BodyTemperature />} />
        <Route path='/labtests_and_reports/labtests' element={<Labtests/>} />
        <Route path='/labtestcategories/bt1' element={<BloodTest/>} />
+       <Route path='/labtestcategories/bt2' element={<KindeyTest/>} />
+       <Route path='/labtestcategories/bt3' element={<ThyroidTest/>} />
+       <Route path='/labtestcategories/bt4' element={<Urinanalysis/>} />
        
        <Route path='/login' element={<Login/>} />
     </Routes>
