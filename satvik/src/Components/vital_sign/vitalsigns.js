@@ -22,10 +22,12 @@ const Vitalsigns = () => {
             <Link className="vital-cat" onClick={() => handleClick('formThree')} to='/vital_sign/vitalsigns/vt3' >Breathing rate</Link>
             <Link className="vital-cat" onClick={() => handleClick('formFour')} to='/vital_sign/vitalsigns/vt1'>Body Temperature</Link>
         </div>
+        <div className='row'>
         {currentForm === 'formOne' && <BodyTemperature />}
          {currentForm === 'formTwo' && <PulseRate />}
          {currentForm === 'formThree' && <BreathingRate />}
          {currentForm === 'formFour' && <BloodPressure />}
+         </div>
 
     </nav>
   )

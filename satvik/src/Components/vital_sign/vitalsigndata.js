@@ -3,6 +3,7 @@ import React from 'react'
 
 const BodyTemperature = () => {
   return (
+    <nav>
     <div  id="vt1">
       Body Temperature measured by:
       <input className="form-input" placeholder="measurement" type="text" name="btmeasure" list="btmeasure-list" />
@@ -18,6 +19,7 @@ const BodyTemperature = () => {
       <input className="form-input" type="text" placeholder="Enter body Temperature" /><br />
       <button onClick={() => console.log("Body Temperature update clicked")}>Update</button>
     </div>
+    </nav>
   )
 }
 

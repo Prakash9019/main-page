@@ -8,6 +8,7 @@ import Vitalsigns from "./Components/vital_sign/vitalsigns";
 import Labtests from "./Components/labtests_and_reports/labtests";
 import Login from "./Components/login"
 import {BodyTemperature,PulseRate,BreathingRate,BloodPressure} from "./Components/vital_sign/vitalsigndata"
+import { BloodTest,KindeyTest,ThyroidTest,Urinanalysis } from "./Components/labtests_and_reports/labtestcategories";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
       <Route path="/vital_sign/vitalsigns/vt3" element={ <BreathingRate />} />
       <Route path="/vital_sign/vitalsigns/vt1" element={ <BodyTemperature />} />
        <Route path='/labtests_and_reports/labtests' element={<Labtests/>} />
+       <Route path='/labtestcategories/bt1' element={<BloodTest/>} />
+       
        <Route path='/login' element={<Login/>} />
     </Routes>
    </Router>
