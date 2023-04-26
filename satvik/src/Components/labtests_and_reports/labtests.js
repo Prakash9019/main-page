@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import {Link} from 'react-router-dom';
 import { BloodTest,KindeyTest,ThyroidTest,Urinanalysis } from "./labtestcategories";
 
-const labtests = () => {
+const Labtests = () => {
 
   const [cf, sc] = useState(null);
 
@@ -31,4 +31,4 @@ const labtests = () => {
   )
 }
 
-export default labtests
+export default Labtests

@@ -1,38 +1,219 @@
-.App {
+.tr-about,.tr-home,.tr-login-details{
+  margin-top:10px;
+  cursor:pointer;
+  padding:7px;
+  border-style: solid;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.tr-right{
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+  margin-right:40px;
+}
+.slider{
+  display: flex;
+  aspect-ratio: 16/9;
+  overflow-x: hidden;
+}
+.slider img{
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+  border-radius: 2%;
+}
+.slider-nav{
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left:50%;
+  transform: translate(-50%);
+  z-index: 1;
+}
+.slider-nav a{
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: black;
+  transition: opacity ease-out 250ms;
+}
+.slider-nav a:hover{
+  opacity: 0.5;
+}
+.container{
+  width:10%;
+}
+.home-page{
+  margin:0;
+  padding-top:60px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  text-align: center;
+  font-size: 15px;
+}
+.labreports,.vital-category-dt{
+  width:450px;
+  margin-top: 10%;
+  padding:15px;
+  box-sizing: border-box;
+  border:2px solid;
+  color:lightgray;
+  background-color: black;
+}
+.labtest-cat,.labreports,.vital-category-dt{
+  display:none;
+  margin:auto;
+}
+.labtest-cat:target,.labreports:target,.vital-category-dt:target{
+  display:block;
+}
+.myform{
+  margin-left:20px;   
+}
+.labtest-list:hover,.labtest-category:hover{
+  background-color: #75E6DA;
+}
+.labreports,.vital-category-dt{
+  width:450px;
+  margin-top: 10%;
+  padding:15px;
+  box-sizing: border-box;
+  border:2px solid;
+  color:lightgray;
+  background-color: black;
+}
+.blood-test{
+  box-sizing: border-box;
+  margin:auto;
+}
+.labtest-category,.labtest-list,.vital-cat{
+  border-style: solid;
+  padding:70px 0px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  cursor:pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-page{ 
+  margin:0;
+  padding-top:55px;
+  padding-left: 180px;
+  margin-right: 10px;
+  font-size:15px;
+  background-image: url("./web-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+.top-layout{
+  position: fixed;
+  height:50px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-style: solid;
+  box-shadow: 5px;
+  align-items: center;
+  margin-bottom: 30px;
+  left:0;
+  right:0;
+  top:0;
+}
+.t-left{
+  display: flex;
+  width:250px;
+  justify-content: space-between;
+  align-items: center;
+  margin-left:30px;
+}
+.image{
+  margin-top: 5%;
+}
+.image img{
+  width:75%;
+}
+.main-info img{
+  width:15%;
+  border-radius: 25%;
+  float: left;
+  z-index: -1;
+}
+.main-info{
+  margin:auto;
+  width: 70%;
+  font-size: 17px;
+  line-height: 2;
+}
+.t-left img{
+  width:25%;
+  border-radius: 25%;
+}
+.t-right{
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  margin-right:40px;
+}
+.t-home,.t-About{
+  margin-top:10px;
+  cursor:pointer;
+  padding:7px;
+  border-style: solid;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.Demograph,.vital,.medications,.Medical,.lab-test,.vital-cat{
+  margin-top:10px;
+  cursor:pointer;
+  padding:15px;
+  border-style: solid;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.left-layout{
+  position: fixed;
+  left:0;
+  bottom:0;
+  display:flex;
+  flex-direction: column;
+  border-right-style: solid;
+  width:150px;
+  top:55;
+  padding:10px;
+}
+.left-section-link{
+  margin-top: 2em;
+  height:75%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.form-input,.form-datalist{
+  margin-bottom:20px;
+  height:20px;
+}
+.demo-display{
+  text-align: center;
+  width:400px;
+  margin:auto;
+  margin-top:100px;
+  box-sizing: border-box;
+  border-style:solid;
+  padding:15px;
+}
+.row{
+  margin-top: 25px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  height:200px;
+  column-gap: 10px;
+  margin-bottom: 10px;
+  margin-left:20%;
+  margin-right: 20%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

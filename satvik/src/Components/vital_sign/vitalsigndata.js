@@ -1,9 +1,10 @@
 import React from 'react'
-
+import '../../../src/App.css';
 
 const BodyTemperature = () => {
   return (
-    <div  id="vt1">
+    
+    <div className="vital-category-dt" id="vt1">
       Body Temperature measured by:
       <input className="form-input" placeholder="measurement" type="text" name="btmeasure" list="btmeasure-list" />
       <datalist className="form-datalist" id="btmeasure-list">
@@ -45,7 +46,7 @@ const BreathingRate = () => {
 
 const BloodPressure = () => {
   return (
-    <div  id="vt4">
+    <div style={{margin: '234px 0'}} id="vt4">
       Blood Pressure:
       <input type="text" placeholder="Select range" className="form-input" list="bp-list" />
       <datalist id="bp-list">
