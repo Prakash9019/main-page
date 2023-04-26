@@ -4,7 +4,9 @@ import {Link} from 'react-router-dom';
 
 const BloodTest = () => {
   return (
-    <div className="labtest-cat" id="bt1">
+    
+    <form className="myform">
+    <div id="bt1">
         <div className="row">
         <Link className="labtest-category" to='/labreports/crp'>C-Reactive Protien Test</Link>
         <Link className="labtest-category" to='/labreports/ana'>Anti Nuclear Antibody</Link>
@@ -18,13 +20,14 @@ const BloodTest = () => {
         <Link className="labtest-category" to='/labreports/blp'>Blood lipid profile</Link>
         </div>
     </div>
+    </form>
   )
 }
 
 
 const KindeyTest = () => {
   return (
-    <div className="labtest-cat" id="bt2">
+    <div  id="bt2">
     <div className="row">
     <Link className="labtest-category" to='/labreports/gfr'> Glomerular Filtration rate(GFR)</Link>
     <Link className="labtest-category" to='/labreports/cbu'>Cretinine blood and urine tests</Link>
@@ -39,7 +42,7 @@ const KindeyTest = () => {
 
 const ThyroidTest = () => {
   return (
-    <div className="labtest-cat" id="bt3">
+    <div id="bt3">
     <div className="row">
     <Link className="labtest-category" to='/labreports/tsh'>TSH TEST</Link>
     <Link className="labtest-category" to='/labreports/t4'>T4 TESTS</Link>
