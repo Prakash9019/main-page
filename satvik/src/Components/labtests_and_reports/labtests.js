@@ -9,6 +9,8 @@ const Labtests = () => {
   const handleClick = (form) => {
     sc(form);
   };
+
+  
   return (
     <nav>
    

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
@@ -32,7 +33,7 @@ const Login = () => {
                 <i class="fas fa-lock"></i>
                 <input type="password" placeholder="Enter your password" required />
               </div>
-              <div class="text"><a href="#">Forgot password?</a></div>
+              <div class="text"><Link to="#">Forgot password?</Link></div>
               <div class="button input-box">
                 <input type="submit" value="Sumbit" />
               </div>
