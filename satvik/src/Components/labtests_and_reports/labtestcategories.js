@@ -12,13 +12,10 @@ const BloodTest = () => {
   };
 
   return (
-<<<<<<< HEAD
+
     
     <form className="myform">
     <div id="bt1">
-=======
-    <div  id="bt1">
->>>>>>> bfa2d6996ae0d469930f80a0eb81e083f18e8d1e
         <div className="row">
         <Link className="labtest-category"  onClick={() => handleClick('f1')} to='/labreports/crp'>C-Reactive Protien Test</Link>
         <Link className="labtest-category"  onClick={() => handleClick('f2')} to='/labreports/ana'>Anti Nuclear Antibody</Link>

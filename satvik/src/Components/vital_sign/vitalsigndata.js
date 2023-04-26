@@ -3,13 +3,11 @@ import '../../../src/App.css';
 
 const BodyTemperature = () => {
   return (
-<<<<<<< HEAD
     
     <div className="vital-category-dt" id="vt1">
-=======
     <nav>
     <div  id="vt1">
->>>>>>> bfa2d6996ae0d469930f80a0eb81e083f18e8d1e
+
       Body Temperature measured by:
       <input className="form-input" placeholder="measurement" type="text" name="btmeasure" list="btmeasure-list" />
       <datalist className="form-datalist" id="btmeasure-list">
