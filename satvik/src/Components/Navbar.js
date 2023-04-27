@@ -1,8 +1,13 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import imge from "./images/logo-main.png"
 
 const Navbar = () => {
+  let navigate=useNavigate();
+  const handleLogout=()=>{
+      localStorage.removeItem('jwtData');
+      navigate('/');
+  }
   return (
 <div className="top-layout">
         <div className="t-left">
@@ -11,7 +16,8 @@ const Navbar = () => {
         </div>
         <div className="t-right">
             <Link className="t-home" to='/main'>Home</Link>
-            <div className="t-About">About Us</div>
+            {!localStorage.getItem('jwtData')? <Link className="t-home" to='/login'>Login</Link> : <Link className="t-home" onClick={handleLogout} >Logout</Link>  }
+            <Link className="t-home" to='/main'>About</Link>
         </div>
     </div>
   )

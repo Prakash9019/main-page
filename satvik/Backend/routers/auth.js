@@ -9,6 +9,7 @@ const jwt_s="ehr-pro";
 
 // user register
 router.post('/user',[
+  body('Uid').isLength({min:3}),
     body('username').isLength({min:3}),
     body('email').isEmail(),
     body('password').isLength({min:3})
@@ -30,6 +31,7 @@ router.post('/user',[
     // const user=User(req.body);    //this two lines are used to simply check the application with backend
     // user.save();
      user=await User.create({
+      Uid : req.body.Uid,
       username: req.body.username,
       email:req.body.email,
       password: secPass,

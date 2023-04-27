@@ -29,7 +29,6 @@ body{
   position: absolute;
   top: 0;
   left: 50%;
-  height: 100%;
   width: 50%;
   z-index: 98;
   transition: all 1s ease;
@@ -44,7 +43,6 @@ body{
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
 }
 .cover .back{
@@ -55,28 +53,28 @@ body{
 .container .cover::after{
   content: '';
   position: absolute;
-  height: 100%;
   width: 100%;
   background: #7d2ae8;
   opacity: 0.5;
   z-index: 12;
 }
 .container .cover::after{
+  background: #7d2ae8;
   opacity: 0.3;
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
 .container .cover img{
+  background: #7d2ae8;
   position: absolute;
-  height: 100%;
   width: 100%;
   object-fit: cover;
   z-index: 10;
 }
 .container .cover .text{
+  background: #7d2ae8;
   position: absolute;
   z-index: 130;
-  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -85,6 +83,7 @@ body{
 }
 .cover .text .text-1,
 .cover .text .text-2{
+  background: #7d2ae8;
   font-size: 26px;
   font-weight: 600;
   color: #fff;
@@ -95,7 +94,6 @@ body{
   font-weight: 500;
 }
 .container .forms{
-  height: 100%;
   width: 100%;
   background: #fff;
 }
@@ -132,14 +130,11 @@ body{
 .forms .form-content .input-box{
   display: flex;
   align-items: center;
-  height: 50px;
   width: 100%;
   margin: 10px 0;
   position: relative;
 }
 .form-content .input-box input{
-  height: 100%;
-  width: 100%;
   outline: none;
   border: none;
   padding: 0 30px;
