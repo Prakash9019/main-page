@@ -4,9 +4,7 @@ import '../../../src/App.css';
 const BodyTemperature = () => {
   return (
     
-    <div className="vital-category-dt" id="vt1">
-    <nav>
-    <div  id="vt1">
+    <div style={{margin: '234px 0'}} id="vt1">
 
       Body Temperature measured by:
       <input className="form-input" placeholder="measurement" type="text" name="btmeasure" list="btmeasure-list" />
@@ -22,13 +20,12 @@ const BodyTemperature = () => {
       <input className="form-input" type="text" placeholder="Enter body Temperature" /><br />
       <button onClick={() => console.log("Body Temperature update clicked")}>Update</button>
     </div>
-    </nav>
   )
 }
 
 const PulseRate = () => {
   return (
-    <div id="vt2">
+    <div style={{margin: '234px 0'}} id="vt2">
       Pulse Rate:
       <input type="text" placeholder="Enter your pulse rate" className="form-input" /><br />
       <button onClick={() => console.log("Pulse Rate update clicked")}>Update</button>
@@ -39,7 +36,7 @@ const PulseRate = () => {
 
 const BreathingRate = () => {
   return (
-    <div  id="vt3">
+    <div style={{margin: '234px 0'}} id="vt3">
       Breathing Rate:
       <input type="text" placeholder="Enter your breath rate" className="form-input" name="breathing rate" /><br />
       <button onClick={() => console.log("Breathing Rate update clicked")}>Update</button>

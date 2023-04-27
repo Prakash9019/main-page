@@ -8,11 +8,8 @@ import Vitalsigns from "./Components/vital_sign/vitalsigns";
 import Labtests from "./Components/labtests_and_reports/labtests";
 import Login from "./Components/login"
 import {BodyTemperature,PulseRate,BreathingRate,BloodPressure} from "./Components/vital_sign/vitalsigndata"
-
-import {BloodTest,KindeyTest,ThyroidTest,Urinanalysis} from "./Components/labtests_and_reports/labtestcategories";
-import { BloodTest,KindeyTest,ThyroidTest,Urinanalysis } from "./Components/labtests_and_reports/labtestcategories";
-
-
+import {Crp,T4,T3,Kut,Tsh,Albumin,Cbu,Gfr,Liver,Glucose,Blp,Ana,Cbc,Phtest,Put,Us} from "./Components/labtests_and_reports/labreports";
+import {BloodTest,KindeyTest,ThyroidTest,Urinanalysis} from "./Components/labtests_and_reports/labtestcategories"
 function App() {
   return (
    <Router>
@@ -31,6 +28,26 @@ function App() {
        <Route path='/labtestcategories/bt2' element={<KindeyTest/>} />
        <Route path='/labtestcategories/bt3' element={<ThyroidTest/>} />
        <Route path='/labtestcategories/bt4' element={<Urinanalysis/>} />
+       <Route path='/labreports/crp' element={<Crp/>} />
+       <Route path='/labreports/t4' element={<T4/>} />
+       <Route path='/labreports/t3' element={<T3/>} />
+       <Route path='/labreports/kut' element={<Kut/>} />
+       <Route path='/labreports/tsh' element={<Tsh/>} />
+       <Route path='/labreports/albumin' element={<Albumin/>} />
+       <Route path='/labreports/cbu' element={<Cbu/>} />
+       <Route path='/labreports/gfr' element={<Gfr/>} />
+       <Route path='/labreports/liver' element={<Liver/>} />
+       <Route path='/labreports/glucose' element={<Glucose/>} />
+       <Route path='/labreports/blp' element={<Blp/>} />
+       <Route path='/labreports/ana' element={<Ana/>} />
+       <Route path='/labreports/cbc' element={<Cbc/>} />
+       <Route path='/labreports/phtest' element={<Phtest/>} />
+       <Route path='/labreports/put' element={<Put/>} />
+       <Route path='/labreports/uspecific' element={<Us/>} />
+       
+       
+
+       
        <Route path='/login' element={<Login/>} />
     </Routes>
    </Router>

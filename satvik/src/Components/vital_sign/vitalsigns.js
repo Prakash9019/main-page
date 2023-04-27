@@ -13,19 +13,16 @@ const Vitalsigns = () => {
 
   return (
     <>
-    <nav>
-
+      <div className="labtests">
         <div className="row">
-            <Link className="vital-cat" onClick={() => handleClick('formOne')} to ="/vital_sign/vitalsigns/vt4"  >Blood pressure</Link>
-            <Link className="vital-cat" onClick={() => handleClick('formTwo')} to='/vital_sign/vitalsigns/vt2'>Pulse Rate</Link>
+            <Link className="labtest-list" onClick={() => handleClick('formOne')} to ="/vital_sign/vitalsigns/vt4"  >Blood pressure</Link>
+            <Link className="labtest-list" onClick={() => handleClick('formTwo')} to='/vital_sign/vitalsigns/vt2'>Pulse Rate</Link>
             </div>
         <div className="row">
-            <Link className="vital-cat" onClick={() => handleClick('formThree')} to='/vital_sign/vitalsigns/vt3' >Breathing rate</Link>
-            <Link className="vital-cat" onClick={() => handleClick('formFour')} to='/vital_sign/vitalsigns/vt1'>Body Temperature</Link>
+            <Link className="labtest-list" onClick={() => handleClick('formThree')} to='/vital_sign/vitalsigns/vt3' >Breathing rate</Link>
+            <Link className="labtest-list" onClick={() => handleClick('formFour')} to='/vital_sign/vitalsigns/vt1'>Body Temperature</Link>
         </div>
-        
-
-    </nav>
+        </div>  
     {currentForm === 'formOne' && <BodyTemperature />}
          {currentForm === 'formTwo' && <PulseRate />}
          {currentForm === 'formThree' && <BreathingRate />}

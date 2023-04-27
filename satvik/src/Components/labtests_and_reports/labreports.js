@@ -5,7 +5,7 @@ const Crp = () =>{
   return(
     <>
         <form className="myform">
-        <div className="labreports" id="crp">
+        <div style={{margin: '234px 0'}} id="crp">
             <p>Enter the crp levels</p>
             <p>Choose the range of the crp levels</p>
             <label htmlFor="crplevel">CRP LEVEL RANGE:</label><input className="form-input" type="text" placeholder="Range" name="crplevel" list="crprange"/>
@@ -26,7 +26,7 @@ const Crp = () =>{
 
 const Cbc = ()=>{
     return(
-        <div className="labreports" id="cbc">
+        <div style={{margin: '234px 0'}} id="cbc">
         <p>Enter the following details</p>
         <label htmlFor="hemoglobin">Hemoglobin:</label><input className="form-input" type="text" name="hemoglobin" placeholder="Hemoglobin levels"/><br/>
         <label htmlFor="rbc">RBC:</label><input className="form-input" type="text" name="rbc"  placeholder="RBC level"/><br/>
@@ -40,7 +40,7 @@ const Cbc = ()=>{
 
 const Ana =()=>{
     return(
-        <div className="labreports" id="ana">
+        <div style={{margin: '234px 0'}} id="ana">
         <p>Enter the ANA levels</p>
         <p>Choose the range of the ANA levels</p>
         <label htmlFor="analevel">ANA LEVEL RANGE:</label><input type="text" placeholder="Range" name="analevel" list="anarange" /><br/>
@@ -57,7 +57,7 @@ const Ana =()=>{
 
 const Blp =()=>{
     return(
-        <div className="labreports" id="blp">
+        <div style={{margin: '234px 0'}} id="blp">
         <p>Enter the following data</p>
         <p>Choose the range of the Choloestrol levels</p>
         <label htmlFor="cholo">Choloestrol range: </label>
@@ -83,7 +83,7 @@ const Blp =()=>{
 
 const Glucose = ()=>{
       return(
-        <div className="labreports" id="glucose">
+        <div style={{margin: '234px 0'}} id="glucose">
         <p>Enter the following data according to test reports</p>
         <p>Choose the range of the A1c test levels</p>
         <label htmlFor="a1c">A1C Test range: </label> <input type="text" placeholder="A1c Test" className="form-input" name="a1c" list="a1c-list"/>
@@ -114,7 +114,7 @@ const Glucose = ()=>{
 
 const Liver =()=>{
       return(
-        <div className="labreports" id="liver">
+        <div style={{margin: '234px 0'}} id="liver">
         <p>Enter the following data according to test reports</p>
         <label htmlFor="alt">ALT:</label><input type="text" placeholder="Alt value" name="alt" className="form-input"/><br/>
         <label htmlFor="ast">AST:</label><input type="text" placeholder="AST value" name="alt" className="form-input"/><br/>
@@ -132,7 +132,7 @@ const Liver =()=>{
 
 const Gfr = ()=>{
     return(
-        <div className="labreports" id="gfr">
+        <div style={{margin: '234px 0'}} id="gfr">
         <p>Enter the following data according to test reports</p>
         <label htmlFor="gfr" >Glomerular Filtration Test range:</label><input className="form-input" type="text" placeholder="Range" name="fbst" list="gfr-list" /><br/>
         <datalist id="gfr-list" className="form-datalist">
@@ -148,7 +148,7 @@ const Gfr = ()=>{
 
 const Cbu = ()=>{
     return(
-        <div className="labreports" id="cbu">
+        <div style={{margin: '234px 0'}} id="cbu">
         <p>Enter your age</p>
         <label htmlFor="cbu-age">Age:</label><input type="text" placeholder="Enter age" className="form-input"/><br/>
         <label htmlFor="cbu-dis">Creatinine levels by age:</label><input type="text" name="cbu-dis" className="form-input" placeholder="crt-Age" list="cbu-list"/><br/>
@@ -166,7 +166,7 @@ const Cbu = ()=>{
 
 const Albumin =()=>{
     return(
-        <div className="labreports" id="albumin">
+        <div style={{margin: '234px 0'}} id="albumin">
         <p>Enter following data according to test reports</p>
         <p>Select the albumin range according to th reports</p>
         <label htmlFor="albumin-range">Albumin range:</label><input type="text" placeholder="Select range" name="albumin-range" list="albumin-list" className="form-input"/>
@@ -183,7 +183,7 @@ const Albumin =()=>{
 
 const Tsh=()=>{
     return(
-        <div className="labreports" id="tsh">
+        <div style={{margin: '234px 0'}} id="tsh">
         <p>select the TSH levels with respective to age</p>
         <label htmlFor="tsh-range">TSH Range</label><input type="text" className="form-input" placeholder="tsh-range" name="tsh-range" list="tsh-list"/><br/>
         <datalist id="tsh-list" className="form-datalist">
@@ -201,7 +201,7 @@ const Tsh=()=>{
 
 const Kut=()=>{
     return(
-        <div className="labreports" id="kut">
+        <div style={{margin: '234px 0'}} id="kut">
         <p>Enter the following data according to the reports</p>
         <p>Select the ketone range with respective your reports</p>
         <label htmlFor="kut-range">Ketone-range</label><input type="text" placeholder="Ketone range" className="form-input" name="kut-range" list="kut-list"/><br/>
@@ -217,16 +217,18 @@ const Kut=()=>{
 }
 
 const T3=()=>{
-    <div className="labreports" id="t3">
+    return(
+    <div style={{margin: '234px 0'}} id="t3">
     <p>Enter the following data according to the reports</p>
     <label htmlFor="t3level">t3 value:</label><input type="text" placeholder="Enter the value from report" name="t3value" className="form-input"/><br/>
     <button type="submit">Update</button>             
 </div>
+    )
 }
 
 const Phtest =()=>{
     return(
-        <div className="labreports" id="phtest">
+        <div style={{margin: '234px 0'}} id="phtest">
         <p>Enter following data according to reports</p>
         <p>Select the ph range with respective your result</p>
         <label htmlFor="ph-t">Ph-range</label><input type="text" placeholder="Ph-range" className="form-input" name="ph-t" list="ph-range"/><br/>
@@ -241,16 +243,18 @@ const Phtest =()=>{
     )
 }
 const Put=()=>{
-    <div className="labreports" id="put">
+    return(
+    <div style={{margin: '234px 0'}} id="put">
         <p>Enter following data according to the reports</p>
         <label htmlFor="putvalue">Protien value:</label><input type="text" placeholder="Enter the value from report" name="putvalue" className="form-input"/><br/>
         <button type="submit">Update</button>
     </div>
+    )
 }
 
 const Us=()=>{
     return(
-        <div className="labreports" id="uspecific">
+        <div style={{margin: '234px 0'}} id="uspecific">
         <p>Enter the following data according to the reports</p>
         <p>Select the urine specific gravity range with respective your reports</p>
         <label htmlFor="usg-range">Urine specifi gravity-range</label><input type="text" placeholder="usg range" className="form-input" name="usg-range" list="usg-list"/><br/>
@@ -266,11 +270,13 @@ const Us=()=>{
 }
 
 const T4=()=>{
-    <div className="labreports" id="t4">
+    return(
+    <div style={{margin: '234px 0'}} id="t4">
     <p>Enter the following data according to the reports</p>
     <label htmlFor="t4level">T4 value:</label><input type="text" placeholder="Enter the value from report" name="t4value" className="form-input"/><br/>
     <button type="submit">Update</button> 
      </div>
+    )
 }
 
 export {Crp,T4,T3,Kut,Tsh,Albumin,Cbu,Gfr,Liver,Glucose,Blp,Ana,Cbc,Phtest,Put,Us};

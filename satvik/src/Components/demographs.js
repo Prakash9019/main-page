@@ -2,14 +2,14 @@ import React, { useContext, useState } from 'react'
 import NoteContext from "../NoteContext"
 
 const Demographs = () => {
-    const context = useContext(NoteContext);
-    const {addNote} = context;
+ //   const context = useContext(NoteContext);
+//    const {addNote} = context;
     const [note, setNote] = useState({name: "", age: "", Uid: "",gender: "",income: ""});
 
     const handleClick = (e)=>{
         e.preventDefault();
         
-        addNote(note.name, note.age, note.Uid,note.gender,note.income);
+   //     addNote(note.name, note.age, note.Uid,note.gender,note.income);
         setNote({name: note.name, age:note.age, Uid: note.Uid,gender:note.gender,income:note.income});
         console.log(note);
         console.log(note._id);
@@ -26,9 +26,9 @@ const Demographs = () => {
         <div className="demo-display">
             <form className="myform">
             <label htmlFor="name">Name:</label><input className="form-input" placeholder="Your name" type="text" name="name" value={note.user} onChange={onChange} /><br/>
-            <label htmlFor="age">Age:</label><input  className="form-input"  type="text" placeholder="Enter your age" value={note.age} onChange={onChange}/>
+            <label htmlFor="age">Age:</label><input  className="form-input"  type="text" placeholder="Enter your age" name='age' value={note.age} onChange={onChange}/>
             <br/>
-            <label htmlFor="aadhar">Aadhaar Number:</label><input className="form-input" type="text" name="aadhar" placeholder="Enter your Adhaar Number" value={note.Uid} onChange={onChange} />
+            <label >Aadhaar Number:</label><input className="form-input" type="text" placeholder="Enter your Adhaar Number" value={note.Uid} onChange={onChange} />
             <br/>
             <label htmlFor="email">E-mail:</label><input className="form-input" type="text" name="email" placeholder="Enter your valid E-mail id" value={note.email} onChange={onChange} />
             <br/>

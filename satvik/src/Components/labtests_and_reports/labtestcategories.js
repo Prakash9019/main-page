@@ -75,11 +75,8 @@ const ThyroidTest = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div id="bt3">
-=======
+
     <div  id="bt3">
->>>>>>> bfa2d6996ae0d469930f80a0eb81e083f18e8d1e
     <div className="row">
     <Link className="labtest-category" onClick={() => handleClick('f10')} to='/labreports/tsh'>TSH TEST</Link>
     <Link className="labtest-category" onClick={() => handleClick('f11')} to='/labreports/t4'>T4 TESTS</Link>
@@ -88,9 +85,9 @@ const ThyroidTest = () => {
     <Link className="labtest-category" onClick={() => handleClick('f12')} to='/labreports/t3'>T3 TESTS</Link>    
     <Link className="labtest-category" onClick={() => handleClick('f13')} to='/labreports/ft3'> FREE T3</Link>
     </div>   
-    {currentForm === 'f7' && <Gfr />}
-    {currentForm === 'f8' && <Cbu />}
-    {currentForm === 'f9' && <Albumin />}
+    {currentForm === 'f10' && <Tsh />}
+    {currentForm === 'f11' && <T4 />}
+    {currentForm === 'f12' && <T3 />}
 </div>
   )
 }
@@ -114,9 +111,10 @@ const Urinanalysis = () => {
     <Link className="labtest-category" onClick={() => handleClick('f16')} to='/labreports/kut'>Ketones urine test</Link>
     <Link className="labtest-category" onClick={() => handleClick('f17')} to='/labreports/uspecific'>Urine speific gravity test</Link>
     </div>
-    {currentForm === 'f7' && <Gfr />}
-    {currentForm === 'f8' && <Cbu />}
-    {currentForm === 'f9' && <Albumin />}
+    {currentForm === 'f14' && <Put />}
+    {currentForm === 'f15' && <Phtest />}
+    {currentForm === 'f16' && <Kut />}
+    {currentForm === 'f17' && <Us />}
 </div>      
   )
 }
