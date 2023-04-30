@@ -12,6 +12,7 @@ app.use(express.json());
 
 app.use('/api/auth',require('./routers/auth.js'));
 app.use('/api/notes',require('./routers/notes'));
+app.use('/api/bodytemp',require('./routers/bodytemp'));
 
 
 app.get('/',(req,res)=>{

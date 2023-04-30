@@ -44,30 +44,30 @@ router.post('/addnote', fetchuser, [
       }
   })
 
-router.post('/addbt',fetchuser,[
-  body('btmeasure', 'Enter a valid name').isLength({ min: 3 })],async(req,res)=>{
-  try{
-   const {btmeasure,datalist,temp} =req.body;
-    console.log("1");
-     // If there are errors, return Bad request and the errors
-     const errors = validationResult(req);
-     console.log(errors);
-     if (!errors.isEmpty()) {
-         return res.status(400).json({ errors: errors.array() });
-     }
-     const note=new Notebt({
-      btmeasure,datalist,temp,user:req.user.id
-     })
-    console.log("2");
-     const savedNote=await note.save();
-     res.json(savedNote);
-    }
-    catch(error){
-      console.error(error.message);
-      res.status(500).send("Internal Server Error");
-    }
-
-})
+  router.post('/addbt',fetchuser,[
+    body('btmeasure', 'Enter a valid name')],async(req,res)=>{
+    try{
+     const {btmeasure,datalist,temp} =req.body;
+      console.log("1");
+       // If there are errors, return Bad request and the errors
+       const errors = validationResult(req);
+       console.log(errors);
+       if (!errors.isEmpty()) {
+           return res.status(400).json({ errors: errors.array() });
+       }
+       const note=new Notebt({
+        btmeasure,datalist,temp,user:req.user.id
+       })
+      console.log("2");
+       const savedNote=await note.save();
+       res.json(savedNote);
+      }
+      catch(error){
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+      }
+  
+  })
 
   //  3: Update . Login required
 router.put('/updatenote/:id', fetchuser, async (req, res) => {

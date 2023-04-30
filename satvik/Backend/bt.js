@@ -7,13 +7,16 @@ const Notesbt = new Schema({
         ref: 'User'             // works as foriegn key for the user.js file
     },
     btmeasure:{
-        type:String
+        type: Array,
+        default:[]
     },
     datalist:{
-        type: String,
+        type: Array,
+        default:[]
     },
     temp:{
-        type: String,
+        type: Array,
+        default:[]
     },
   });
 

@@ -91,7 +91,7 @@
 }
 .labtest-category,.labtest-list,.vital-cat{
   border-style: solid;
-  padding:70px 0px;
+  padding:70px 60px;
   box-sizing: border-box;
   border-radius: 20px;
   cursor:pointer;

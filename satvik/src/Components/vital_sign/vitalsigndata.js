@@ -7,17 +7,18 @@ const BodyTemperature = () => {
   const handleClick=async (e)=>{
      e.preventDefault();
      const {btmeasure,datalist,temp} =note;
-     const response = await fetch("http://localhost:5000/api/auth/addbt", {
+     const response = await fetch("http://localhost:5000/api/bodytemp/addbt", {
       method: 'POST',
       headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          "jwtData": localStorage.getItem('jwtData')
       },
       body: JSON.stringify({btmeasure,datalist,temp})
   });
   const json = await response.json()
   console.log(json);
    //  addbt(note.btmeasure,note.datalist,note.temp);
-     setnote({btmeasure:note.btmeasure,datalist:note.datalist,temp:note.temp})
+ //    setnote({btmeasure:note.btmeasure,datalist:note.datalist,temp:note.temp})
 
   }
 
