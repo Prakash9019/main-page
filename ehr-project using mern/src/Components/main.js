@@ -5,30 +5,15 @@ const Main = () => {
   return (
     <nav>
       
-      <div class="ig">
-    <div class="head">
-
-        <div class="left">
-            <h1>Electronic Health Records</h1>
-        </div>
-        
-        <div class="right">
-            <ul>
-                <li><Link to="ehr.html">Sign In</Link></li>
-                <li><Link to="#">Sign Up</Link></li>
-            </ul>    
-        </div>
-    
-    </div>
-    
+   
 
 
     <section class="container">
         <div class="slide-wrapper">
             <div class="slider">
-                <img id="slide-1" src="https://news.yale.edu/sites/default/files/styles/featured_media/public/ynews-ehrecords-01_2.jpg?itok=uXO1C0i3&c=a75e254fe1da31f2732f6b0d7bce1413" />
-                <img id="slide-2" src="https://blueehr.com/wp-content/uploads/2017/02/Web-Based-EHR-1.jpg" />
-                <img id="slide-3" src="https://www.techuz.com/blog/wp-content/uploads/2019/07/EHR-Banner.jpg" />
+                <img id="slide-1" src="https://news.yale.edu/sites/default/files/styles/featured_media/public/ynews-ehrecords-01_2.jpg?itok=uXO1C0i3&c=a75e254fe1da31f2732f6b0d7bce1413" alt='image1'/>
+                <img id="slide-2" src="https://blueehr.com/wp-content/uploads/2017/02/Web-Based-EHR-1.jpg" alt='image2' />
+                <img id="slide-3" src="https://www.techuz.com/blog/wp-content/uploads/2019/07/EHR-Banner.jpg"alt='image3' />
            
             </div>
 
@@ -43,7 +28,7 @@ const Main = () => {
     <div class="para1">
 
         <div class="p1left">
-            <img id="m12" src="https://img.freepik.com/premium-vector/illustration-cute-male-doctor-with-stethoscope-kawaii-vector-cartoon-character-design_380474-31.jpg" width="300px" height="300px"/>
+            <img id="m12" alt='image1' src="https://img.freepik.com/premium-vector/illustration-cute-male-doctor-with-stethoscope-kawaii-vector-cartoon-character-design_380474-31.jpg" width="300px" height="300px"/>
         </div>
 
         <div class="p1right">
@@ -62,7 +47,7 @@ real-time, patient-centered records that make information available instantly an
         </div>
         
         <div class="pright">
-            <img id="img2" src="https://education.ncgmedical.com/hubfs/how-to-keep-costs-down-in-an-ehr-implementation.jpeg" width="450px" height="400px" />
+            <img id="img2" alt='image1' src="https://education.ncgmedical.com/hubfs/how-to-keep-costs-down-in-an-ehr-implementation.jpeg" width="450px" height="400px" />
         </div>
 
     </div>
@@ -74,7 +59,6 @@ real-time, patient-centered records that make information available instantly an
             <li>Contact Us  <i class="fa fa-envelope" aria-hidden="true"></i>  <i class="fa fa-facebook-official" aria-hidden="true"></i>  <i class="fa fa-instagram" aria-hidden="true"></i></li>
         </ul>
     
-    </div>
     </div>
     </nav>
   )
