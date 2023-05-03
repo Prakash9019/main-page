@@ -1,6 +1,4 @@
 import React from 'react'
-import main from "./images/main-page.jpg";
-import ehr from "./images/ehr-symbol.png";
 import {Link} from 'react-router-dom';
 
 const Main = () => {
