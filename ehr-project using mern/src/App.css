@@ -116,13 +116,7 @@
   margin-left:20%;
   margin-right: 20%;
 }
-.labtest-cat,.labreports,.vital-category-dt{
-  display:none;
-  margin:auto;
-}
-.labtest-cat:target,.labreports:target,.vital-category-dt:target{
-  display:block;
-}
+
 .myform{
   margin-left:20px;   
 }
@@ -134,7 +128,7 @@
   margin-top: 10%;
   padding:15px;
   box-sizing: border-box;
-  border:2px solid;
+  border:solid;
 }
 .blood-test{
   box-sizing: border-box;
