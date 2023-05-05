@@ -54,7 +54,7 @@ real-time, patient-centered records that make information available instantly an
 
     <div class="foot">
         <ul>
-            <li><Link to="#">About us</Link></li>
+            {/* <li><Link to="#">About us</Link></li> */}
             <li><Link to="#">Copyright <i class="fa fa-copyright" aria-hidden="true"></i></Link></li>
             <li>Contact Us  <i class="fa fa-envelope" aria-hidden="true"></i>  <i class="fa fa-facebook-official" aria-hidden="true"></i>  <i class="fa fa-instagram" aria-hidden="true"></i></li>
         </ul>
