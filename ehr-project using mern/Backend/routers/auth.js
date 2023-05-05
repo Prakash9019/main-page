@@ -15,6 +15,7 @@ router.post('/user',[
     body('password').isLength({min:3})
 ],async (req,res)=>{
      const errors = validationResult(req);
+     console.log(errors);
     if (!errors.isEmpty()) {
       return res.status(400).send("please try to login with error box...");
     }
@@ -36,6 +37,7 @@ router.post('/user',[
       email:req.body.email,
       password: secPass,
     });
+    console.log(user);
     const data={
       user:{
         id:user.id
