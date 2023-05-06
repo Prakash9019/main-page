@@ -129,6 +129,7 @@
   padding:15px;
   box-sizing: border-box;
   border:solid;
+  margin-left: 30%;
 }
 .blood-test{
   box-sizing: border-box;
@@ -224,19 +225,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
-}
+} 
 .login-main{
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("./web-background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-top:55px;
-  padding-left: 180px;
-  margin-right: 10px;
-  font-size:15px;
+  text-align: initial;
 }
 .container{
   position: relative;

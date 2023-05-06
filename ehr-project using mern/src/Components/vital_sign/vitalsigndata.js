@@ -27,9 +27,9 @@ const BodyTemperature = () => {
   }
   return (
     
-    <div style={{margin: '234px 0'}} id="vt1">
+    <div className="vital-category-dt" id="vt1">
 
-      Body Temperature measured by:
+      Body Temperature measured by:<br/>
       <input className="form-input" placeholder="measurement" type="text" name="btmeasure" onChange={onChange} value={note.btmeasure} list="btmeasure-list" />
       <datalist className="form-datalist" id="btmeasure-list" name="datalist" onChange={onChange} value={note.datalist}>
         <option  value="Orally" />
@@ -39,7 +39,7 @@ const BodyTemperature = () => {
         <option  value="By skin" />
       </datalist>
       <br />
-      Body Temperature:
+      Body Temperature:<br/>
       <input className="form-input" type="text" placeholder="Enter body Temperature" name="temp" onChange={onChange} value={note.temp} /><br />
       <button onClick={handleClick}>Update</button>
     </div>
@@ -48,8 +48,8 @@ const BodyTemperature = () => {
 
 const PulseRate = () => {
   return (
-    <div style={{margin: '234px 0'}} id="vt2">
-      Pulse Rate:
+    <div className="vital-category-dt" id="vt2">
+      Pulse Rate:<br/>
       <input type="text" placeholder="Enter your pulse rate" className="form-input" /><br />
       <button onClick={() => console.log("Pulse Rate update clicked")}>Update</button>
       <br />
@@ -59,8 +59,8 @@ const PulseRate = () => {
 
 const BreathingRate = () => {
   return (
-    <div style={{margin: '234px 0'}} id="vt3">
-      Breathing Rate:
+    <div className="vital-category-dt" id="vt3">
+      Breathing Rate:<br/>
       <input type="text" placeholder="Enter your breath rate" className="form-input" name="breathing rate" /><br />
       <button onClick={() => console.log("Breathing Rate update clicked")}>Update</button>
       <br />
@@ -70,8 +70,8 @@ const BreathingRate = () => {
 
 const BloodPressure = () => {
   return (
-    <div style={{margin: '234px 0'}} id="vt4">
-      Blood Pressure:
+    <div className="vital-category-dt" id="vt4">
+      Blood Pressure:<br/>
       <input type="text" placeholder="Select range" className="form-input" list="bp-list" />
       <datalist id="bp-list">
         <option  value="Normal-120/80" />
@@ -80,7 +80,7 @@ const BloodPressure = () => {
         <option  value="Stage2-(>140)/(>90)" />
       </datalist>
       <br />
-      Breathing Rate:
+      Breathing Rate:<br/>
       <input type="text" placeholder="Enter your bprate" className="form-input" name="bprate" /><br />
       <button onClick={() => console.log("Blood Pressure update clicked")}>Update</button>
     </div>

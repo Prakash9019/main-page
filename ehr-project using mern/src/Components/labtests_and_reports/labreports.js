@@ -7,7 +7,7 @@ const Crp = () =>{
         <form className="myform">
         <div className="labreports" id="crp">
             <p>Enter the crp levels</p>
-            <p>Choose the range of the crp levels</p>
+            <p>Choose the range of the crp levels</p><br/>
             <label htmlFor="crplevel">CRP LEVEL RANGE:</label><input className="form-input" type="text" placeholder="Range" name="crplevel" list="crprange"/>
             <datalist className="form-datalist" id="crprange">
                 <option value="less than 0.3mg/dl"/>
@@ -27,7 +27,7 @@ const Crp = () =>{
 const Cbc = ()=>{
     return(
         <div className="labreports" id="cbc">
-        <p>Enter the following details</p>
+        <p>Enter the following details</p><br/>
         <label htmlFor="hemoglobin">Hemoglobin:</label><input className="form-input" type="text" name="hemoglobin" placeholder="Hemoglobin levels"/><br/>
         <label htmlFor="rbc">RBC:</label><input className="form-input" type="text" name="rbc"  placeholder="RBC level"/><br/>
         <label htmlFor="wbc">WBC:</label><input className="form-input" type="text" name="wbc" placeholder="WBC level"/><br/>
@@ -41,8 +41,8 @@ const Cbc = ()=>{
 const Ana =()=>{
     return(
         <div className="labreports" id="ana">
-        <p>Enter the ANA levels</p>
-        <p>Choose the range of the ANA levels</p>
+        <p>Enter the ANA levels</p><br/>
+        <p>Choose the range of the ANA levels</p><br/>
         <label htmlFor="analevel">ANA LEVEL RANGE:</label><input type="text" placeholder="Range" name="analevel" list="anarange" /><br/>
         <datalist className="form-datalist" id="anarange">
             <option value="less 20units"/>
@@ -58,8 +58,8 @@ const Ana =()=>{
 const Blp =()=>{
     return(
         <div className="labreports" id="blp">
-        <p>Enter the following data</p>
-        <p>Choose the range of the Choloestrol levels</p>
+        <p>Enter the following data</p><br/>
+        <p>Choose the range of the Choloestrol levels</p><br/>
         <label htmlFor="cholo">Choloestrol range: </label>
        <input type="text" placeholder="Cholestrol" className="form-input" name="cholo" list="choloestrol-list"/>
         <datalist id="choloestrol-list" className="form-datalist">
@@ -84,8 +84,8 @@ const Blp =()=>{
 const Glucose = ()=>{
       return(
         <div className="labreports" id="glucose">
-        <p>Enter the following data according to test reports</p>
-        <p>Choose the range of the A1c test levels</p>
+        <p>Enter the following data according to test reports</p><br/>
+        <p>Choose the range of the A1c test levels</p><br/>
         <label htmlFor="a1c">A1C Test range: </label> <input type="text" placeholder="A1c Test" className="form-input" name="a1c" list="a1c-list"/>
         <datalist id="a1c-list" className="form-datalist">
             <option value="Normal-Below 5.7%"/>
@@ -115,7 +115,7 @@ const Glucose = ()=>{
 const Liver =()=>{
       return(
         <div className="labreports" id="liver">
-        <p>Enter the following data according to test reports</p>
+        <p>Enter the following data according to test reports</p><br/>
         <label htmlFor="alt">ALT:</label><input type="text" placeholder="Alt value" name="alt" className="form-input"/><br/>
         <label htmlFor="ast">AST:</label><input type="text" placeholder="AST value" name="alt" className="form-input"/><br/>
         <label htmlFor="alp">ALP:</label><input type="text" placeholder="ALP value" name="alt" className="form-input"/><br/>
@@ -133,8 +133,8 @@ const Liver =()=>{
 const Gfr = ()=>{
     return(
         <div className="labreports" id="gfr">
-        <p>Enter the following data according to test reports</p>
-        <label htmlFor="gfr" >Glomerular Filtration Test range:</label><input className="form-input" type="text" placeholder="Range" name="fbst" list="gfr-list" /><br/>
+        <p>Enter the following data according to test reports</p><br/>
+        <label htmlFor="gfr" >Glomerular Filtration Test range:</label><input className="form-input" type="text" placeholder="Range" name="fbst" list="gfr-list" />
         <datalist id="gfr-list" className="form-datalist">
             <option value="Normal-Above 60mg/dl"/>
             <option value="Kdiney Disease-Below 60mg/dl"/>
