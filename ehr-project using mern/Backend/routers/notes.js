@@ -21,7 +21,7 @@ router.post('/addnote', fetchuser, [
   body('name', 'Enter a valid name').isLength({ min: 3 })], async (req, res) => {
       try {
         // using destructing method of javascript for send the requested data to corresponding fields
-          const { name, age, Uid } = req.body;
+          const { name, age, Uid,email,gender,income,education,emp } = req.body;
 
           // If there are errors, return Bad request and the errors
           const errors = validationResult(req);
@@ -31,7 +31,7 @@ router.post('/addnote', fetchuser, [
           //created a new note with "new" keyword
           //new note object  contain name...
           const note = new Note({
-              name, age, Uid , user: req.user.id
+              name, age, Uid ,email,gender,income,education,emp, user: req.user.id
           })
           //saving the notes 
           const savedNote = await note.save()
@@ -48,7 +48,7 @@ router.post('/addnote', fetchuser, [
     body('btmeasure', 'Enter a valid name')],async(req,res)=>{
     try{
      const {btmeasure,datalist,temp} =req.body;
-      console.log("1");
+   //   console.log("1");
        // If there are errors, return Bad request and the errors
        const errors = validationResult(req);
        console.log(errors);
@@ -80,7 +80,12 @@ router.put('/updatenote/:id', fetchuser, async (req, res) => {
       if (name) { newNote.name = name };
       if (age) { newNote.age = age };
       if (Uid ) { newNote.Uid  = Uid  };
-
+       //email,gender,income,education,emp
+       if (email ) { newNote.email  = email  };
+       if (gender ) { newNote.gender  = gender  };
+       if (income ) { newNote.income  = income  };
+       if (emp ) { newNote.emp  = emp  };
+       if (education ) { newNote.education  = education  };
       // Find the note to be updated and update it
       //getting the notes by findById method...
       let note = await Note.findOneAndUpdate({Uid:Uid},req.body,{new:true});

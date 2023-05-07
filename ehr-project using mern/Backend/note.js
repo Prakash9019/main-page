@@ -17,10 +17,23 @@ const NotesSchema = new Schema({
         type: String,
         required: true, 
     },
+    email:{
+        type:String,
+        required:true,
+    },
     gender:{
         type: String,
         default: "male"
     },
+    income:{
+        type:Number,
+    },
+    education:{
+        type:String,
+    },
+    emp:{
+        type:String,
+    }
   });
 
   module.exports = mongoose.model('notes', NotesSchema);
