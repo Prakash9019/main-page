@@ -30,13 +30,28 @@ router.post('/addnote', fetchuser, [
           }
           //created a new note with "new" keyword
           //new note object  contain name...
-          const note = new Note({
+          const newNote = {};
+          if (name) { newNote.name = name };
+          if (age) { newNote.age = age };
+          if (Uid ) { newNote.Uid  = Uid  };
+           //email,gender,income,education,emp
+           if (email ) { newNote.email  = email  };
+           if (gender ) { newNote.gender  = gender  };
+           if (income ) { newNote.income  = income  };
+           if (emp ) { newNote.emp  = emp  };
+           if (education ) { newNote.education  = education  };
+           let note1 = await Notebt.find({user : req.user.id});
+           if(!note1){
+            const note = new Note({
               name, age, Uid ,email,gender,income,education,emp, user: req.user.id
           })
           //saving the notes 
           const savedNote = await note.save()
           // return the notes as the response
           res.json(savedNote);
+           }
+           note1 = await Notebt.findOneAndUpdate(req.user.id, { $set: newNote }, { new: true })   //sending the new note in place of the old note
+            res.json({ note1 });
 
       } catch (error) {
           console.error(error.message);
@@ -44,30 +59,7 @@ router.post('/addnote', fetchuser, [
       }
   })
 
-  router.post('/addbt',fetchuser,[
-    body('btmeasure', 'Enter a valid name')],async(req,res)=>{
-    try{
-     const {btmeasure,datalist,temp} =req.body;
-   //   console.log("1");
-       // If there are errors, return Bad request and the errors
-       const errors = validationResult(req);
-       console.log(errors);
-       if (!errors.isEmpty()) {
-           return res.status(400).json({ errors: errors.array() });
-       }
-       const note=new Notebt({
-        btmeasure,datalist,temp,user:req.user.id
-       })
-      console.log("2");
-       const savedNote=await note.save();
-       res.json(savedNote);
-      }
-      catch(error){
-        console.error(error.message);
-        res.status(500).send("Internal Server Error");
-      }
-  
-  })
+
 
   //  3: Update . Login required
 router.put('/updatenote/:id', fetchuser, async (req, res) => {

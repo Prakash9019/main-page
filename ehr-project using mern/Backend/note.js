@@ -26,7 +26,7 @@ const NotesSchema = new Schema({
         default: "male"
     },
     income:{
-        type:Number,
+        type:String,
     },
     education:{
         type:String,
