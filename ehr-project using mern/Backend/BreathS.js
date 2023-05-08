@@ -1,10 +1,10 @@
 const mongoose=require('mongoose');
 const {Schema}=mongoose;
 
-const NotesSchema=new Schema({
+const Bsn=new Schema({
     user:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'user'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'             // works as foriegn key for the user.js file
     },
     br:{
         type:Array,
@@ -12,4 +12,4 @@ const NotesSchema=new Schema({
     }
 });
 
-module.exports=mongoose.model('breathS',NotesSchema);
+module.exports=mongoose.model('breathS',Bsn);

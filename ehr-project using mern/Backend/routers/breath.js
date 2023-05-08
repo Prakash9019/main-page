@@ -2,7 +2,7 @@ const express=require('express');
 const router=express.Router();
 const fetchuser=require('../fetch');
 const { body, validationResult } = require('express-validator');
-const BreathS = require('../BreathS');
+const Bsn = require('../BreathS');
 const { findByIdAndUpdate } = require('../note.js');
 
 
@@ -18,10 +18,10 @@ router.post('/addbs',fetchuser,[
        }
        const newNote = {};
        if (br) { newNote.br = br };
-       let note1 = await BreathS.find({user : req.user.id});
+       let note1 = await Bsn.find({user : req.user.id});
        console.log(note1);
        if(!note1){
-       const note=new BreathS({
+       const note=new Bsn({
         br,user:req.user.id
        })
        console.log(note);
@@ -32,7 +32,7 @@ router.post('/addbs',fetchuser,[
       
     //find and update the data by findByIdandupdate
    // findByIdAndUpdate()
-    note1 = await BreathS.findOneAndUpdate(req.user.id, { $set: newNote }, { new: true })   //sending the new note in place of the old note
+    note1 = await Bsn.findOneAndUpdate(req.user.id, { $set: newNote }, { new: true })   //sending the new note in place of the old note
     res.json({ note1 });
       }
       catch(error){
