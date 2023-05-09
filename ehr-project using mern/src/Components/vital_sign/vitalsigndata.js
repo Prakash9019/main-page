@@ -62,15 +62,14 @@ const BreathingRate = () => {
     const handleClick=async (e)=>{
         e.preventDefault();
         const {br}=curr;
-        console.log(br);
         
-        const response= await fetch("http://localhost:5000/api/breath/addbs",{
+        const response= await fetch("http://localhost:5000/api/breaths/addbs",{
           method:"POST",
           headers:{
             "Content-Type":"application/json",
             "jwtData":localStorage.getItem('jwtData')
           },
-          body:JSON.stringify({br})
+          body:JSON.stringify({br}),
         }
         )
         const json = await response.json()

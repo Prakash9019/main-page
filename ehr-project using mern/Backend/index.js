@@ -13,7 +13,7 @@ app.use(express.json());
 app.use('/api/auth',require('./routers/auth.js'));
 app.use('/api/notes',require('./routers/notes'));
 app.use('/api/bodytemp',require('./routers/bodytemp'));
-app.use('/api/breath',require('./routers/breath'));
+app.use('/api/breaths',require('./routers/breaths'));
 
 app.get('/',(req,res)=>{
     res.send("hello surya");

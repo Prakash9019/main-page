@@ -9,7 +9,9 @@ const Bsn=new Schema({
     br:{
         type:Array,
         default:[]
-    }
+    },
 });
 
-module.exports=mongoose.model('breathS',Bsn);
+module.exports=mongoose.model('breaths',Bsn);
+
+
