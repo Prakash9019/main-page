@@ -56,7 +56,7 @@ const Login = (props) => {
     }
 
   return (
-
+    <div className='login-main'>
     <div className="container">
     <input type="checkbox" id="flip" />
     <div className="cover">
@@ -124,6 +124,7 @@ const Login = (props) => {
     </div>
     </div>
     </div>
+  </div>
   </div>
   )
 }
