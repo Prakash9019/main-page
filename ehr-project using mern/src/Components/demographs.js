@@ -4,15 +4,25 @@ import React, {  useState } from 'react'
 const Demographs = () => {
  //   const context = useContext(NoteContext);
 //    const {addNote} = context;
-    const [note, setNote] = useState({name: "", age: "", Uid: "",gender: "",income: ""});
+    const [note, setNote] = useState({name: "", age: "", Uid: "",gender: "",income: "",education:"",emp:""});
 
-    const handleClick = (e)=>{
+    const handleClick = async (e)=>{
         e.preventDefault();
-        
+        const { name, age, Uid,email,gender,income,education,emp} =note;
+        const response = await fetch("http://localhost:5000/api/notes/addnote", {
+         method: 'POST',
+         headers: {
+             'Content-Type': 'application/json',
+             "jwtData": localStorage.getItem('jwtData')
+         },
+         body: JSON.stringify({ name, age, Uid,email,gender,income,education,emp})
+     });
+     const json = await response.json()
+     console.log(json);
    //     addNote(note.name, note.age, note.Uid,note.gender,note.income);
-        setNote({name: note.name, age:note.age, Uid: note.Uid,gender:note.gender,income:note.income});
-        console.log(note);
-        console.log(note._id);
+        setNote({name: note.name, age:note.age, Uid: note.Uid,gender:note.gender,income:note.income,education:note.education,emp:note.emp});
+        // console.log(note);
+        // console.log(note._id);
     }
 
     const onChange = (e)=>{
@@ -28,17 +38,17 @@ const Demographs = () => {
             <label htmlFor="name">Name:</label><input className="form-input" placeholder="Your name" type="text" name="name" value={note.user} onChange={onChange} /><br/>
             <label htmlFor="age">Age:</label><input  className="form-input"  type="text" placeholder="Enter your age" name='age' value={note.age} onChange={onChange}/>
             <br/>
-            <label >Aadhaar Number:</label><input className="form-input" type="text" placeholder="Enter your Adhaar Number" value={note.Uid} onChange={onChange} />
+            <label >Aadhaar Number:</label><input className="form-input" type="text" placeholder="Enter your Adhaar Number" name="Uid" value={note.Uid} onChange={onChange} />
             <br/>
             <label htmlFor="email">E-mail:</label><input className="form-input" type="text" name="email" placeholder="Enter your valid E-mail id" value={note.email} onChange={onChange} />
             <br/>
-            <label htmlFor="gnd"> Gender:</label><input className="form-input" placeholder="Enter your Gender" type="text" id="gender" name="gnd" list="gender-option" value={note.gender} onChange={onChange} />
+            <label htmlFor="gnd"> Gender:</label><input className="form-input" placeholder="Enter your Gender" type="text" id="gender" name="gender" list="gender-option" value={note.gender} onChange={onChange} />
             <datalist className="form-datalist" id="gender-option">
                 <option value="male"/>
                 <option value="female"/>
             </datalist>
             <br/>
-            <label htmlFor="inc">Income:</label><input className="form-input" placeholder="Income" type="text" name="inc" list="income-options" value={note.income} onChange={onChange}/>
+            <label htmlFor="inc">Income:</label><input className="form-input" placeholder="Income" type="text" name="income" list="income-options" value={note.income} onChange={onChange}/>
             <datalist id="income-options" className="form-datalist">
                 <option value="Not working"/>
                 <option value="below 2 lacks"/>
@@ -47,7 +57,7 @@ const Demographs = () => {
                 <option value="Above 10 lakhs"/>
             </datalist>
             <br/>
-            <label htmlFor="edc">Education:</label><input className="form-input" placeholder="Education details" type="text" name="edc" list="Education-options" value={note.edu} onChange={onChange} />
+            <label htmlFor="edc">Education:</label><input className="form-input" placeholder="Education details" type="text" name="education" list="Education-options" value={note.education} onChange={onChange} />
             <datalist id="Education-options" className="form-datalist">
                 <option value="10th"/>
                 <option value="Intermediate"/>

@@ -16,7 +16,8 @@ function App() {
     <Navbar/>
     <Leftview/>
     <Routes>
-      <Route path="/" element={<Main/>} />
+      <Route path="/main" element={<Main/>} />  
+        <Route path="/" element={<Main/>} />
       <Route path="/demographs" element={<Demographs/>} />
       <Route path="/vital_sign/vitalsigns" element={<Vitalsigns/>} />
       <Route path="/vital_sign/vitalsigns/vt4" element={ <BloodPressure />} />

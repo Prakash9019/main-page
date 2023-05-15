@@ -58,11 +58,32 @@ const PulseRate = () => {
 }
 
 const BreathingRate = () => {
+    const [curr,newcurr]=useState({br:""});
+    const handleClick=async (e)=>{
+        e.preventDefault();
+        const {br}=curr;
+        
+        const response= await fetch("http://localhost:5000/api/breaths/addbs",{
+          method:"POST",
+          headers:{
+            "Content-Type":"application/json",
+            "jwtData":localStorage.getItem('jwtData')
+          },
+          body:JSON.stringify({br}),
+        }
+        )
+        const json = await response.json()
+        console.log(json);
+    }
+   const onChange=(e)=>{
+    newcurr({...curr,[e.target.name]:[e.target.value]});
+   }
+
   return (
     <div className="vital-category-dt" id="vt3">
       Breathing Rate:<br/>
-      <input type="text" placeholder="Enter your breath rate" className="form-input" name="breathing rate" /><br />
-      <button onClick={() => console.log("Breathing Rate update clicked")}>Update</button>
+      <input type="text" placeholder="Enter your breath rate" className="form-input" onChange={onChange} value={curr.br} name="br" /><br />
+      <button onClick={handleClick}>Update</button>
       <br />
     </div>
   )
