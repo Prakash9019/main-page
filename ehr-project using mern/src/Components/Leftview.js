@@ -8,8 +8,8 @@ const Leftview = () => {
             <Link className="Demograph" to="/demographs">Profile</Link>
             <Link className="vital" to='/vital_sign/vitalsigns'>Vital Signs</Link>
             <Link className="lab-test" to="/labtests_and_reports/labtests">Lab tests</Link>
-            <Link className="Medical" to="/labreports/crp">Medical Records</Link>
-            <Link className="medications" to="/labreports/crp">Medicaions</Link>
+            <Link className="Medical" to="/medical_records">Medical Records</Link>
+            <Link className="medications" to="/medical_records">Medicaions</Link>
         </div>
     </div>
   )

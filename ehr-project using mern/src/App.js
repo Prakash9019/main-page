@@ -10,6 +10,7 @@ import Login from "./Components/login"
 import {BodyTemperature,PulseRate,BreathingRate,BloodPressure} from "./Components/vital_sign/vitalsigndata"
 import {Crp,T4,T3,Kut,Tsh,Albumin,Cbu,Gfr,Liver,Glucose,Blp,Ana,Cbc,Phtest,Put,Us} from "./Components/labtests_and_reports/labreports";
 import {BloodTest,KindeyTest,ThyroidTest,Urinanalysis} from "./Components/labtests_and_reports/labtestcategories"
+import MedicalRecords from './Components/medical_records';
 function App() {
   return (
    <Router>
@@ -45,7 +46,7 @@ function App() {
        <Route path='/labreports/phtest' element={<Phtest/>} />
        <Route path='/labreports/put' element={<Put/>} />
        <Route path='/labreports/uspecific' element={<Us/>} />
-       
+       <Route path='/medical_records' element={<MedicalRecords/>} />
        
 
        
