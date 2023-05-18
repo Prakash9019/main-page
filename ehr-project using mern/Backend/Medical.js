@@ -6,9 +6,12 @@ const File= new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'             // works as foriegn key for the user.js file
     },
-    myfile:{
-        type:String
+    name: String,
+    img:
+    {
+        data: Buffer,
+        contentType: String
     }
 });
 
-module.exports=mongoose.model('medical',File)
+module.exports=mongoose.model('medical',File);
