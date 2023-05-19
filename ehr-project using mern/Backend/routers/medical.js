@@ -34,7 +34,6 @@ router.post('/upload-image', upload.single('myfile'), async (req, res) => {
   
    let data=new Model();
    data.name=req.file.originalname;
-  // console.log(path.join(__dirname + '/uploads/'+req.file.originalname));
    fs.writeFileSync(req.file.originalname,req.file.filename);
    data.img.data=fs.readFileSync(path.join("D:/mini-pro/main-page/ehr-project using mern/" + req.file.originalname));
    data.img.contentType='image/png';
