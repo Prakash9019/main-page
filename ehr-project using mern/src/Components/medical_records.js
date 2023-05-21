@@ -1,53 +1,50 @@
 import React, { useState } from 'react'
 import '../App.css';
-import axios from "axios";
+ import axios from "axios";
 
 
 const MedicalRecords = () => {
-    const [item, setItem] = useState({img:""});
+    // const [item, setItem] = useState(null);
+    // const [imt,setimt]=useState(null);
 
-    const handleFileChange = (e) => {
-   //   console.log(e.target.files[0]);
-      setItem({...item,img:[e.target.files[0]]});
-      // var reader=new FileReader();
-      // reader.readAsDataURL(e.target.files[0]);
-      // reader.onload=()=>{
-      //   //  console.log(reader.result);
-      //     setItem(reader.result);
-      // }
-      // reader.onerror=error =>{
-      //     console.log("Error" ,error);
-      // };
-      // console.log(e.target.files[0]);
-      // setItem(e.target.files[0]);
+    const [selectedFile, setSelectedFile] = useState(null);
+
+    const handleFileChange = (event) => {
+      setSelectedFile(event.target.files[0]);
     };
+  
+  
   
     const handleSubmit = async (e) => {
       e.preventDefault();
-     console.log(item.img[0]);
-     console.log(item.img[0].name);
-    //  console.log("mm"+item.img +item.img.name);
-      // Create a new FormData object
-      const formdata = new FormData();
-      formdata.append("myfile", item.img[0],item.img[0].name);
-      console.log(formdata);
+    //  console.log(imt);
+    //   console.log(item.img[0]);
+    //  console.log(item.img[0].name);
+    // //  console.log("mm"+item.img +item.img.name);
+    //   // Create a new FormData object
+    //   const myfile=item.img;
+      // const formdata = new FormData();
+      // formdata.append("myfile", item.img[0],item.img[0].name);
+      // console.log(formdata);
   
   try {
     // const {name,img}=item.img[0];
     // console.log("name"+name);
-    // console.log("imge"+img);
-    const url=`http://localhost:5000/api/medical/upload-image` ;
+    const formData = new FormData();
+    formData.append('myfile', selectedFile);
 
-      const response = await fetch(url, formdata,{
-        method: 'POST',
-        headers: {
-    //      "Content-Type": "multipart/form-data",
-          "jwtData": localStorage.getItem('jwtData')
-        }
-      });
-      console.log(response); // Image uploaded successfully
-      const json = await response.json()
-      console.log(json);
+    await axios.post('http://localhost:5000/api/medical/upload-image', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        "jwtData": localStorage.getItem('jwtData'),
+      },
+    });
+
+ //   console.log('Image uploaded successfully');
+
+      console.log("Done sucessfuly");
+      // const json = await response.json()
+      // console.log(json);
     } catch (error) {
       console.error(error);
     }
@@ -85,7 +82,7 @@ const MedicalRecords = () => {
      <br/>
      <br/>
    
-   {item==="" || item===null ? "": <img width={100} height={100} src={item} alt='no  internet'/>}
+  
      <br/>
      <br/>
      <form id="form" onSubmit={handleSubmit} >
