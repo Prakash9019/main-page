@@ -1,12 +1,13 @@
 import React, { useState,useEffect } from 'react'
 import '../App.css';
  import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 
 const MedicalRecords = () => {
     // const [item, setItem] = useState(null);
     // const [imt,setimt]=useState(null);
-
+    const navigate=useNavigate();
     const [selectedFile, setSelectedFile] = useState(null);
     const [images, setImages] = useState([]);
 
@@ -14,7 +15,7 @@ const MedicalRecords = () => {
            var reader=new FileReader();
         reader.readAsDataURL(event.target.files[0]);
         reader.onload=()=>{
-            console.log(reader.result);
+           // console.log(reader.result);
           //  setItem(reader.result);
         }
         reader.onerror=error =>{
@@ -32,7 +33,6 @@ const MedicalRecords = () => {
               "jwtData": localStorage.getItem('jwtData'),
             },
           });
-          console.log(response.data[4].img.data.data);
           setImages(response.data);
         } catch (error) {
           console.error(error);
@@ -57,15 +57,11 @@ const MedicalRecords = () => {
         "jwtData": localStorage.getItem('jwtData'),
       },
     });
-    
      console.log('Image uploaded successfully');
-
-      console.log("Done sucessfuly");
-      // const json = await response.json()
-      // console.log(json);
     } catch (error) {
       console.error(error);
     }
+   
     }
     // const convertToBase64 =(e)=>{
     //     console.log(e);
@@ -117,11 +113,11 @@ const _arrayBufferToBase64 = ( buffer ) => {
      onChange={handleFileChange}
      />
      <br/>
-     <button type='submit' >Upload</button>
+     <button type='submit' onSubmit={ navigate('/medical_records')} >Upload</button>
      </form>
      <div>
-      {images.map((image) =>{
-          return <img src={`data:image/png;base64,${ _arrayBufferToBase64(image.img.data.data)}`} width={100} height={100} alt="" />
+      {images.map((image,i) =>{
+          return <img src={`data:image/png;base64,${ _arrayBufferToBase64(image.img.data.data)}`} width={100} height={100} alt="" key={i}/>
       } )}
     </div>
 
