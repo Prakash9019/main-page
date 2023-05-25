@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import '../App.css';
  import axios from "axios";
 
@@ -8,28 +8,46 @@ const MedicalRecords = () => {
     // const [imt,setimt]=useState(null);
 
     const [selectedFile, setSelectedFile] = useState(null);
+    const [images, setImages] = useState([]);
 
     const handleFileChange = (event) => {
+           var reader=new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onload=()=>{
+            console.log(reader.result);
+          //  setItem(reader.result);
+        }
+        reader.onerror=error =>{
+            console.log("Error" ,error);
+        };
       setSelectedFile(event.target.files[0]);
     };
+    
+    useEffect(() => {
+      const fetchImages = async () => {
+        try {
+          const response= await axios.get('http://localhost:5000/api/medical/images', {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+              "jwtData": localStorage.getItem('jwtData'),
+            },
+          });
+          console.log(response.data[4].img.data.data);
+          setImages(response.data);
+        } catch (error) {
+          console.error(error);
+        }
+      };
   
+      fetchImages();
+    }, []);
   
   
     const handleSubmit = async (e) => {
-      e.preventDefault();
-    //  console.log(imt);
-    //   console.log(item.img[0]);
-    //  console.log(item.img[0].name);
-    // //  console.log("mm"+item.img +item.img.name);
-    //   // Create a new FormData object
-    //   const myfile=item.img;
-      // const formdata = new FormData();
-      // formdata.append("myfile", item.img[0],item.img[0].name);
-      // console.log(formdata);
-  
+      e.preventDefault();  
   try {
     // const {name,img}=item.img[0];
-    // console.log("name"+name);
+    // console.log("name"+name)
     const formData = new FormData();
     formData.append('myfile', selectedFile);
 
@@ -39,8 +57,8 @@ const MedicalRecords = () => {
         "jwtData": localStorage.getItem('jwtData'),
       },
     });
-
- //   console.log('Image uploaded successfully');
+    
+     console.log('Image uploaded successfully');
 
       console.log("Done sucessfuly");
       // const json = await response.json()
@@ -75,14 +93,22 @@ const MedicalRecords = () => {
 
 
 // }
+const _arrayBufferToBase64 = ( buffer ) => {
+  var binary = '';
+  var bytes = new Uint8Array( buffer );
+  var len = bytes.byteLength;
+  for (var i = 0; i < len; i++) {
+      binary += String.fromCharCode( bytes[ i ] );
+  }
+  return window.btoa( binary );
+}
+
 
   return (
     <div className="vital-category-dt" id="vt2">
      Lets Upload image
      <br/>
      <br/>
-   
-  
      <br/>
      <br/>
      <form id="form" onSubmit={handleSubmit} >
@@ -93,8 +119,15 @@ const MedicalRecords = () => {
      <br/>
      <button type='submit' >Upload</button>
      </form>
+     <div>
+      {images.map((image) =>{
+          return <img src={`data:image/png;base64,${ _arrayBufferToBase64(image.img.data.data)}`} width={100} height={100} alt="" />
+      } )}
+    </div>
+
     </div>
   )
-}
+};
+
 
 export default MedicalRecords

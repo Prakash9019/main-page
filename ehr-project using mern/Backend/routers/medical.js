@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true,parameterLimit:100000,limit:"50mb
 app.use(bodyParser.json())
 
 var multer = require('multer');
+const { redirect } = require('react-router-dom');
+const fetchUser = require('../fetch');
  
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -31,15 +33,66 @@ var upload = multer({ storage: storage});
 // //return(console.log("fine"));
 // };
  
-router.post('/upload-image', upload.single('myfile'), async (req, res) => {
+// API endpoint for fetching all images
+router.get('/imagesw',fetchuser, async (req, res) => {
+  try {
+    const images = await Model.find({user:req.user.id});
+
+    // Convert image data to base64 format
+    const base64Images = images.map((image) => ({
+      _id: image._id,
+      name: image.name,
+      img: image.img.data.toString('base64'),
+      contentType: image.img.contentType,
+    }));
+
+    res.status(200).json(base64Images);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Failed to fetch images');
+   }
+});
+
+
+// API endpoint for fetching all images
+router.get('/images',fetchuser, async (req, res) => {
+    try {
+      const images = await Model.find({user:req.user.id});
+      res.json(images);
+    } catch (error) {
+      res.status(500).send('Failed to fetch images');
+    }
+  });
   
-    console.log(req.body);
+  // API endpoint for serving individual images
+  router.get('/api/image/:id', async (req, res) => {
+    try {
+      const image = await Model.findById(req.params.id);
+  
+      if (!image) {
+        return res.status(404).send('Image not found');
+      }
+  
+      res.set('Content-Type', image.img.contentType);
+      res.send(image.img.data);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Failed to fetch image');
+    }
+  });
+  
+
+router.post('/upload-image', upload.single('myfile'), fetchuser,async (req, res) => {
+  
+   // console.log(req.body);
 //    let image = (req.file) ? req.file.filename :null;
   // console.log(image);
-   console.log(req.file);
+     console.log(req.user.id);
+
   const {originalname,mimetype,path}=req.file;
 
     const inl=new Model({
+      user:req.user.id,
         name:originalname,
         image:{
             data:null,
@@ -55,7 +108,6 @@ router.post('/upload-image', upload.single('myfile'), async (req, res) => {
     const savedImage = await image.save();
 
     console.log('Image saved:');
-
 
 //     console.log(req.body.imt);
 //     console.log("....");
