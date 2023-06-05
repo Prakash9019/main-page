@@ -113,7 +113,7 @@ const _arrayBufferToBase64 = ( buffer ) => {
      onChange={handleFileChange}
      />
      <br/>
-     <button type='submit' onSubmit={ navigate('/medical_records')} >Upload</button>
+     <button type='submit' >Upload</button>
      </form>
      <div>
       {images.map((image,i) =>{
