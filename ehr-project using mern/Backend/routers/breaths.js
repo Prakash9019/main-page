@@ -5,6 +5,15 @@ const { body, validationResult } = require('express-validator');
 const Bsn = require('../BreathS.js');
 const { findByIdAndUpdate } = require('../note.js');
 
+router.get('/fetchall', fetchuser,  async (req, res) => {
+  try {
+    const notes = await Note.find({user : req.user.id});
+    res.json(notes);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 router.post('/addbs',fetchuser,[
     body('br', 'Enter a valid body rate')],async (req,res)=>{

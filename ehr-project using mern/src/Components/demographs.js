@@ -4,7 +4,7 @@ import axios from 'axios';
 const Demographs = () => {
  //   const context = useContext(NoteContext);
 //    const {addNote} = context;
-    const [note, setNote] = useState({name: "", age: "", Uid: "",gender: "",income: "",education:"",emp:""});
+    const [note, setNote] = useState({name: " ", age: " ", Uid: " ",gender: " ",income: " ",education:" ",emp:" "});
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -15,8 +15,12 @@ const Demographs = () => {
                 "jwtData": localStorage.getItem('jwtData'),
               },
             });
-            console.log(response.data[0]);
-            setNote(response.data[0]);
+            if(response.data.length===0 ){
+                 setNote({name: " " , age: " ", Uid: " ",gender: " ",income: " ",education:" ",emp:" "});
+            }
+            else{
+              setNote(response.data[0]);
+            }
           } catch (error) {
             console.error(error);
           }

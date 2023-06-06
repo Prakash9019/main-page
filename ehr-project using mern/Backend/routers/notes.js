@@ -39,9 +39,9 @@ router.post('/addnote', fetchuser, async (req, res) => {
            if (emp ) { newNote.emp  = emp  };
            if (education ) { newNote.education  = education  };
         //   let note1 = await Notebt.find({user : req.user.id});
-        console.log(Uid);
            let note = await Note.findOneAndUpdate({Uid:Uid},req.body);
            console.log(note);
+
            if (!note) { 
             const note = new Note({
               name, age, Uid ,email,gender,income,education,emp, user: req.user.id
@@ -50,7 +50,7 @@ router.post('/addnote', fetchuser, async (req, res) => {
           // return the notes as the response
           res.json(savedNote);
             }
-     
+          else{
            //matching the existing user id with the login id
            console.log(note.Uid);
            if (note.Uid !== Uid) {     // checks whether the user login in is using his notes or other 
@@ -60,6 +60,7 @@ router.post('/addnote', fetchuser, async (req, res) => {
           // findByIdAndUpdate()
            note = await Note.findOneAndUpdate(req.params.Uid, { $set: newNote }, { new: true })   //sending the new note in place of the old note
            res.json({ note });
+          }
 
       } catch (error) {
           console.error(error.message);
