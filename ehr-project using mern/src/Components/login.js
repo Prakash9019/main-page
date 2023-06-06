@@ -48,6 +48,15 @@ const Login = (props) => {
         }
     }
 
+    const handleSign= async ()=>{
+      const response = await fetch("http://localhost:5000/auth/google", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    }
+
      const onChange1=(e)=>{
              setSign({...sign,[e.target.name]: e.target.value})
      }
@@ -91,6 +100,11 @@ const Login = (props) => {
               <div className="button input-box">
                 <input type="submit" value="Sumbit" />
               </div>
+              <div className='col-sm-4'>
+               <i className="fab fa-google"></i>   
+                     <Link className="btn btn-google btn-block text-uppercase btn-outline" to="/auth/google" onClick={handleSign}>Sign Up with Google</Link>
+                 </div>
+                   
               <div className="text sign-up-text">Don't have an account? <label htmlFor="flip">Sigup now</label></div>
             </div>
         </form>
@@ -118,6 +132,14 @@ const Login = (props) => {
               <div className="button input-box">
                 <input type="submit" value="Sumbit" />
               </div>
+               <div className='col-sm-4'>
+               <i className="fab fa-google"></i>   
+                     <Link className="btn btn-google btn-block text-uppercase btn-outline" to="/auth/google">Sign Up with Google</Link>
+                 </div>
+                   
+                    
+                     
+
               <div className="text sign-up-text">Already have an account? <label htmlFor="flip">Login now</label></div>
             </div>
       </form>

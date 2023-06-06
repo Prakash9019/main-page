@@ -1,11 +1,29 @@
-import React, {  useState } from 'react'
+import React, {  useState,useEffect } from 'react'
 //import NoteContext from "../NoteContext"
-
+import axios from 'axios';
 const Demographs = () => {
  //   const context = useContext(NoteContext);
 //    const {addNote} = context;
     const [note, setNote] = useState({name: "", age: "", Uid: "",gender: "",income: "",education:"",emp:""});
 
+    useEffect(() => {
+        const fetchImages = async () => {
+          try {
+            const response= await axios.get('http://localhost:5000/api/notes/fetchall', {
+              headers: {
+                'Content-Type': 'application/json',
+                "jwtData": localStorage.getItem('jwtData'),
+              },
+            });
+            console.log(response.data[0]);
+            setNote(response.data[0]);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+    
+        fetchImages();
+      }, []);
     const handleClick = async (e)=>{
         e.preventDefault();
         const { name, age, Uid,email,gender,income,education,emp} =note;
@@ -35,7 +53,7 @@ const Demographs = () => {
    
         <div className="demo-display">
             <form className="myform">
-            <label htmlFor="name">Name:</label><input className="form-input" placeholder="Your name" type="text" name="name" value={note.user} onChange={onChange} /><br/>
+            <label htmlFor="name">Name:</label><input className="form-input" placeholder="Your name" type="text" name="name" value={note.name} onChange={onChange} /><br/>
             <label htmlFor="age">Age:</label><input  className="form-input"  type="text" placeholder="Enter your age" name='age' value={note.age} onChange={onChange}/>
             <br/>
             <label >Aadhaar Number:</label><input className="form-input" type="text" placeholder="Enter your Adhaar Number" name="Uid" value={note.Uid} onChange={onChange} />

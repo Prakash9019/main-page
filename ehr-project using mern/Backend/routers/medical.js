@@ -60,7 +60,6 @@ router.post('/upload-image', upload.single('myfile'), fetchuser,async (req, res)
     image.img.data = buffer; // Assign the buffer to the img.data property
 
     const savedImage = await image.save();
-
 //     console.log(req.body.imt);
 //     console.log("....");
 //     console.log(req.file.originalname);

@@ -2,7 +2,6 @@ const express=require('express');
 const router=express.Router();
 const fetchuser=require('../fetch');
 const Note=require('../note.js');
-const Notebt=require("../bt");
 const { body, validationResult } = require('express-validator');
 const { findByIdAndUpdate } = require('../note.js');
 
@@ -17,8 +16,7 @@ router.get('/fetchall', fetchuser,  async (req, res) => {
   });
   
   // 2: Add a new Note , Login required
-router.post('/addnote', fetchuser, [
-  body('name', 'Enter a valid name').isLength({ min: 3 })], async (req, res) => {
+router.post('/addnote', fetchuser, async (req, res) => {
       try {
         // using destructing method of javascript for send the requested data to corresponding fields
           const { name, age, Uid,email,gender,income,education,emp } = req.body;
@@ -40,18 +38,28 @@ router.post('/addnote', fetchuser, [
            if (income ) { newNote.income  = income  };
            if (emp ) { newNote.emp  = emp  };
            if (education ) { newNote.education  = education  };
-           let note1 = await Notebt.find({user : req.user.id});
-           if(!note1){
+        //   let note1 = await Notebt.find({user : req.user.id});
+        console.log(Uid);
+           let note = await Note.findOneAndUpdate({Uid:Uid},req.body);
+           console.log(note);
+           if (!note) { 
             const note = new Note({
               name, age, Uid ,email,gender,income,education,emp, user: req.user.id
           })
-          //saving the notes 
           const savedNote = await note.save()
           // return the notes as the response
           res.json(savedNote);
+            }
+     
+           //matching the existing user id with the login id
+           console.log(note.Uid);
+           if (note.Uid !== Uid) {     // checks whether the user login in is using his notes or other 
+               return res.status(401).send("Not Allowed");
            }
-           note1 = await Notebt.findOneAndUpdate(req.user.id, { $set: newNote }, { new: true })   //sending the new note in place of the old note
-            res.json({ note1 });
+           //find and update the data by findByIdandupdate
+          // findByIdAndUpdate()
+           note = await Note.findOneAndUpdate(req.params.Uid, { $set: newNote }, { new: true })   //sending the new note in place of the old note
+           res.json({ note });
 
       } catch (error) {
           console.error(error.message);

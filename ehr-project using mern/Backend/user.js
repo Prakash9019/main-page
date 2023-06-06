@@ -1,5 +1,8 @@
 const mongoose= require("mongoose");
 const {Schema}= mongoose;
+const passportLocalMongoose = require('passport-local-mongoose');
+const findOrCreate = require('mongoose-findorcreate');
+
 const userSchema= new Schema({
     Uid:{
         type:String
@@ -19,6 +22,10 @@ const userSchema= new Schema({
         min:2,
     }
 });
+
+
+userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(findOrCreate);
 
 // const User=mongoose.model("Users",userSchema);
 // User.createIndexes();
