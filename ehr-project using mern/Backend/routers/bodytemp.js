@@ -32,18 +32,22 @@ router.post('/addbt',fetchuser,[
        if (temp ) { newNote.temp  = temp };
 
        let note1 = await Notebt.find({user : req.user.id});
-       if(!note1){
+       if(note1===null){
        const note=new Notebt({
         btmeasure,datalist,temp,user:req.user.id
        })
+       
        const savedNote=await note.save();
        res.json(savedNote);
       }
       
     //find and update the data by findByIdandupdate
    // findByIdAndUpdate()
+   else{
     note1 = await Notebt.findOneAndUpdate(req.user.id, { $set: newNote }, { new: true })   //sending the new note in place of the old note
     res.json({ note1 });
+   }
+    
       }
       catch(error){
         console.error(error.message);
