@@ -28,10 +28,12 @@ router.post('/addbs',fetchuser,[
        res.json(savedNote);
       
       }
+      
       else{
         note1 = await Bsn.findOneAndUpdate(req.user.id, { $set: newNote }, { new: true })   //sending the new note in place of the old note
         res.json({ note1 });
       }
+      console.log("hello");
       
     //find and update the data by findByIdandupdate
    // findByIdAndUpdate()
