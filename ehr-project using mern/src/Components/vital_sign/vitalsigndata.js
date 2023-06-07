@@ -1,8 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
+import axios from 'axios';
 import '../../../src/App.css';
 
 const BodyTemperature = () => {
   const [note,setnote]=useState({btmeasure:"",datalist:"",temp:""});
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response= await axios.get('http://localhost:5000/api/bodytemp/fetchall', {
+          headers: {
+            'Content-Type': 'application/json',
+            "jwtData": localStorage.getItem('jwtData'),
+          },
+        });
+        if(response.data.length===0 ){
+             setnote({btmeasure:" ",datalist:"",temp:""});
+        }
+        else{
+          setnote(response.data[0]);
+        }
+        
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchImages();
+  }, []);
 
   const handleClick=async (e)=>{
      e.preventDefault();
@@ -30,7 +55,7 @@ const BodyTemperature = () => {
     <div className="vital-category-dt" id="vt1">
 
       Body Temperature measured by:<br/>
-      <input className="form-input" placeholder="measurement" type="text" name="btmeasure" onChange={onChange} value={note.btmeasure} list="btmeasure-list" />
+      <input className="form-input" placeholder="measurement" type="text" name="btmeasure" onChange={onChange} value={ note.btmeasure} list="btmeasure-list" />
       <datalist className="form-datalist" id="btmeasure-list" name="datalist" onChange={onChange} value={note.datalist}>
         <option  value="Orally" />
         <option  value="Rectally" />
@@ -59,6 +84,29 @@ const PulseRate = () => {
 
 const BreathingRate = () => {
     const [curr,newcurr]=useState({br:""});
+    useEffect(() => {
+      const fetchImages = async () => {
+        try {
+          const response= await axios.get('http://localhost:5000/api/breaths/fetchall', {
+            headers: {
+              'Content-Type': 'application/json',
+              "jwtData": localStorage.getItem('jwtData'),
+            },
+          });
+          if(response.data.length===0 ){
+               newcurr({br:""});
+          }
+          else{
+            newcurr(response.data[0]);
+          }
+          
+        } catch (error) {
+          console.error(error);
+        }
+      };
+  
+      fetchImages();
+    }, []);
     const handleClick=async (e)=>{
         e.preventDefault();
         const {br}=curr;
@@ -82,7 +130,7 @@ const BreathingRate = () => {
   return (
     <div className="vital-category-dt" id="vt3">
       Breathing Rate:<br/>
-      <input type="text" placeholder="Enter your breath rate" className="form-input" onChange={onChange} value={curr.br} name="br" /><br />
+      <input type="text" placeholder="Enter your breath rate" className="form-input" name="br" onChange={onChange} value={curr.br}  /><br />
       <button onClick={handleClick}>Update</button>
       <br />
     </div>

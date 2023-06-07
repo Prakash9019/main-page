@@ -40,14 +40,11 @@ router.post('/addbt',fetchuser,[
        const savedNote=await note.save();
        res.json(savedNote);
       }
+      else{
+             note1 = await Notebt.findOneAndUpdate(req.user.id, { $set: newNote }, { new: true })   //sending the new note in place of the old note
+             res.json({ note1 });
+      }
       
-    //find and update the data by findByIdandupdate
-   // findByIdAndUpdate()
-   else{
-    note1 = await Notebt.findOneAndUpdate(req.user.id, { $set: newNote }, { new: true })   //sending the new note in place of the old note
-    res.json({ note1 });
-   }
-    
       }
       catch(error){
         console.error(error.message);
