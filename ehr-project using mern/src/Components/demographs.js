@@ -100,4 +100,4 @@ const Demographs = () => {
   );
 }
 
-export default Demographs;
+export default Demographs;charan
