@@ -5,7 +5,7 @@ const Demographs = () => {
  //   const context = useContext(NoteContext);
 //    const {addNote} = context;
     const [note, setNote] = useState({name: "", age: "", Uid: "",gender: "",income: "",education:"",emp:""});
-
+console.log("hello")
     useEffect(() => {
         const fetchImages = async () => {
           try {
@@ -54,7 +54,7 @@ const Demographs = () => {
         <div className="demo-display">
             <form className="myform">
             <label htmlFor="name">Name:</label><input className="form-input" placeholder="Your name" type="text" name="name" value={note.name} onChange={onChange} /><br/>
-            <label htmlFor="age">Age:</label><input  className="form-input"  type="text" placeholder="Enter your age" name='age' value={note.age} onChange={onChange}/>
+            <label htmlFor="age">Age:</label><input  className="form-input"  type="text" placeholder="Enter your age" name="age" value={note.age} onChange={onChange}/>
             <br/>
             <label >Aadhaar Number:</label><input className="form-input" type="text" placeholder="Enter your Adhaar Number" name="Uid" value={note.Uid} onChange={onChange} />
             <br/>
