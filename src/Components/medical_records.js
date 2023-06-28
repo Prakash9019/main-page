@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const MedicalRecords = () => {
-    // const [item, setItem] = useState(null);
+     const [item, setItem] = useState(null);
     // const [imt,setimt]=useState(null);
     const navigate=useNavigate();
     const [selectedFile, setSelectedFile] = useState(null);
@@ -16,7 +16,7 @@ const MedicalRecords = () => {
         reader.readAsDataURL(event.target.files[0]);
         reader.onload=()=>{
            // console.log(reader.result);
-          //  setItem(reader.result);
+            setItem(reader.result);
         }
         reader.onerror=error =>{
             console.log("Error" ,error);
@@ -101,7 +101,7 @@ const _arrayBufferToBase64 = ( buffer ) => {
 
 
   return (
-    <div className="vital-category-dt" id="vt2">
+    <div className="img-u" id="vt2">
      Lets Upload image
      <br/>
      <br/>
@@ -115,9 +115,9 @@ const _arrayBufferToBase64 = ( buffer ) => {
      <br/>
      <button type='submit' >Upload</button>
      </form>
-     <div>
+     <div >
       {images.map((image,i) =>{
-          return <img src={`data:image/png;base64,${ _arrayBufferToBase64(image.img.data.data)}`} width={100} height={100} alt="" key={i}/>
+          return <img src={`data:image/png;base64,${ _arrayBufferToBase64(image.img.data.data)}`} width={250} height={250} alt="" key={i} style={{'padding':'10px'}} />
       } )}
     </div>
 
