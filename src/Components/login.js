@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { useNavigate,Link } from 'react-router-dom'
-
+import GoogleLogin from 'react-google-login'
 const Login = (props) => {
   const [credentials, setCredentials] = useState({email: "", password: ""}) 
     let navigate = useNavigate();
@@ -22,6 +22,11 @@ const Login = (props) => {
             localStorage.setItem('jwtData', json.jwtData); 
             console.log(json.jwtData);
             navigate("/");
+    }
+
+    const responseGoogle = (response) => {
+      console.log('it is response');
+      console.log(response);
     }
 
     const handleSubmit = async (e) => {
@@ -136,6 +141,13 @@ const Login = (props) => {
                <i className="fab fa-google"></i>   
                      <Link className="btn btn-google btn-block text-uppercase btn-outline" to="/auth/google">Sign Up with Google</Link>
                  </div>
+                 <GoogleLogin
+    clientId='634216453752-7mkaqm0kn1ehtdrhqmj6t7u67g2vv01h.apps.googleusercontent.com'
+    buttonText="Login"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />
                    
                     
                      

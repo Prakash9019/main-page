@@ -60,6 +60,7 @@ app.use('/api/auth',require('./routers/auth.js'));
 app.use('/api/notes',require('./routers/notes'));
 app.use('/api/bodytemp',require('./routers/bodytemp'));
 app.use('/api/breaths',require('./routers/breaths'));
+app.use('/api/bloodpre',require('./routers/bloodpressure'));
 app.use('/api/medical',require('./routers/medical'));
 
 

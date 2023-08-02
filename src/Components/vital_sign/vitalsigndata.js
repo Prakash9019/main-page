@@ -50,6 +50,8 @@ const BodyTemperature = () => {
   const onChange=(e)=>{
     setnote({...note,[e.target.name]:[e.target.value]});
   }
+
+ 
   return (
     
     <div className="vital-category-dt" id="vt1">
@@ -138,10 +140,57 @@ const BreathingRate = () => {
 }
 
 const BloodPressure = () => {
+  const [note,setnote]=useState({bplimit:"",bprate:""});
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response= await axios.get('http://localhost:5000/api/bloodpre/fetchall', {
+          headers: {
+            'Content-Type': 'application/json',
+            "jwtData": localStorage.getItem('jwtData'),
+          },
+        });
+        if(response.data.length===0 ){
+             setnote({bplimit:" ",bprate:""});
+        }
+        else{
+          setnote(response.data[0]);
+        }
+        
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchImages();
+  }, []);
+
+  const handleClick=async (e)=>{
+     e.preventDefault();
+     const {bplimit,bprate} =note;
+     const response = await fetch("http://localhost:5000/api/bloodpre/addbp", {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          "jwtData": localStorage.getItem('jwtData')
+      },
+      body: JSON.stringify({bplimit,bprate})
+  });
+  const json = await response.json()
+  console.log(json);
+   //  addbt(note.btmeasure,note.datalist,note.temp);
+ //    setnote({btmeasure:note.btmeasure,datalist:note.datalist,temp:note.temp})
+
+  }
+
+  const onChange=(e)=>{
+    setnote({...note,[e.target.name]:[e.target.value]});
+  }
   return (
     <div className="vital-category-dt" id="vt4">
       Blood Pressure:<br/>
-      <input type="text" placeholder="Select range" className="form-input" list="bp-list" />
+      <input type="text" placeholder="Select range" className="form-input" list="bp-list" name='bplimit' onChange={onChange} value={note.bplimit} />
       <datalist id="bp-list">
         <option  value="Normal-120/80" />
         <option  value="Elevated-(120-129)/80" />
@@ -150,8 +199,8 @@ const BloodPressure = () => {
       </datalist>
       <br />
       Breathing Rate:<br/>
-      <input type="text" placeholder="Enter your bprate" className="form-input" name="bprate" /><br />
-      <button onClick={() => console.log("Blood Pressure update clicked")}>Update</button>
+      <input type="text" placeholder="Enter your bprate" className="form-input" name="bprate" onChange={onChange} value={note.bprate} /><br />
+      <button onClick={handleClick}>Update</button>
     </div>
   )
 }

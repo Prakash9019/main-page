@@ -1,14 +1,14 @@
 const express=require('express');
 const router=express.Router();
 const fetchuser=require('../fetch');
-const Notebt=require("../bt");
+const Notebp=require("../bp");
 const { body, validationResult } = require('express-validator');
 const { findByIdAndUpdate } = require('../note.js');
 
 
 router.get('/fetchall', fetchuser,  async (req, res) => {
     try {
-      const notes = await Notebt.find({user : req.user.id});
+      const notes = await Notebp.find({user : req.user.id});
       res.json(notes);
     } catch (error) {
       console.error(error.message);
@@ -17,31 +17,31 @@ router.get('/fetchall', fetchuser,  async (req, res) => {
   });
 
 
-router.post('/addbt',fetchuser,[
-    body('btmeasure', 'Enter a valid btmeasure')],async (req,res)=>{
+router.post('/addbp',fetchuser,[
+    body('bprate', 'Enter a valid bprate')],async (req,res)=>{
     try{
-     const {btmeasure,datalist,temp} =req.body;
+     const {bplimit,bprate} =req.body;
        // If there are errors, return Bad request and the errors
        const errors = validationResult(req);
        if (!errors.isEmpty()) {
            return res.status(400).json({ errors: errors.array() });
        }
        const newNote = {};
-       if (btmeasure) { newNote.btmeasure = btmeasure };
-       if (datalist) { newNote.datalist = datalist };
-       if (temp ) { newNote.temp  = temp };
+       if (bprate) { newNote.bprate = bprate };
+       if (bplimit) { newNote.bplimit = bplimit };
+     
 
-       let note1 = await Notebt.find({user : req.user.id});
+       let note1 = await Notebp.find({user : req.user.id});
        if(note1.length===0){
-       const note=new Notebt({
-        btmeasure,datalist,temp,user:req.user.id
+       const note=new Notebp({
+        bplimit,bprate,user:req.user.id
        })
        
        const savedNote=await note.save();
        res.json(savedNote);
       }
       else{
-             note1 = await Notebt.findOneAndUpdate(req.user.id, { $set: newNote }, { new: true })   //sending the new note in place of the old note
+             note1 = await Notebp.findOneAndUpdate(req.user.id, { $set: newNote }, { new: true })   //sending the new note in place of the old note
              res.json({ note1 });
       }
       
