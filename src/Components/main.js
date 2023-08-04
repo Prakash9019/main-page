@@ -10,9 +10,9 @@ const Main = () => {
         <div>
             <div className="slide-wrapper">
                 <div className="slider">
-                    <img id="slide-1" src="https://news.yale.edu/sites/default/files/styles/featured_media/public/ynews-ehrecords-01_2.jpg?itok=uXO1C0i3&c=a75e254fe1da31f2732f6b0d7bce1413" alt="image1" />
-                    <img id="slide-2" src="https://blueehr.com/wp-content/uploads/2017/02/Web-Based-EHR-1.jpg" alt="image2" />
-                    <img id="slide-3" src="https://www.techuz.com/blog/wp-content/uploads/2019/07/EHR-Banner.jpg" alt="image3" />
+                    <img id="slide-1" src="https://silverlinecrm.com/wp-content/uploads/2020/03/why-ehr-and-crm-are-better-together-e1592269029246.jpg"/>
+                    <img id="slide-2" src="https://blueehr.com/wp-content/uploads/2017/02/Web-Based-EHR-1.jpg" />
+                    <img id="slide-3" src="https://www.techuz.com/blog/wp-content/uploads/2019/07/EHR-Banner.jpg" />
                 </div>
                 <div className="slider-nav">
                 <Link to="#slide-1"></Link>
