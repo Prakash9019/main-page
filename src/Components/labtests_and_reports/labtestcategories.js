@@ -42,8 +42,6 @@ const BloodTest = () => {
    
   )
 }
-
-
 const KindeyTest = () => {
   const [currentForm, setCurrentForm] = useState(null);
 

@@ -4,9 +4,6 @@ import {Link} from 'react-router-dom';
 const Main = () => {
   return (
     <nav>
-      
-   
-
         <div>
             <div className="slide-wrapper">
                 <div className="slider">
