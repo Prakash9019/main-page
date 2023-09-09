@@ -54,7 +54,7 @@ router.post('/upload-image', upload.single('myfile'), fetchuser,async (req, res)
         }
     })
     const image = await inl.save();
-
+//djbvsbhb
     const buffer = fs.readFileSync(path); // Read the file from the file system
 
     image.img.data = buffer; // Assign the buffer to the img.data property
