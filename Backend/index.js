@@ -145,10 +145,10 @@ app.post("/success", async (req, res) => {
 
 
 //socket conection
-const socket=io();
-io.on('connection', (socket) => {
-  console.log('a user connected');
-});
+// const socket=io();
+// io.on('connection', (socket) => {
+//   console.log('a user connected');
+// });
 
 
 

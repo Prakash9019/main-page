@@ -6,6 +6,7 @@ const Model=require('../Medical');
 var fs=require('fs');
 var path = require('path');
 
+
 var app = express();
 
  var bodyParser = require('body-parser')
