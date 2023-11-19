@@ -22,6 +22,7 @@ const Login = (props) => {
             localStorage.setItem('jwtData', json.jwtData); 
             console.log(json.jwtData);
             navigate("/");
+            props.showAlert("Account created sucessfully","success");
     }
 
     // const responseGoogle = (response) => {
@@ -30,6 +31,7 @@ const Login = (props) => {
     // }
 
     const handleSubmit = async (e) => {
+        
         e.preventDefault();
         const response = await fetch("http://localhost:5000/api/auth/login", {
             method: 'POST',
@@ -46,10 +48,11 @@ const Login = (props) => {
             localStorage.setItem('jwtData', json.jwtData); 
             console.log(json.jwtData);
             navigate("/");
+            props.showAlert("Logged in sucessfully","success");
 
         }
         else{
-            alert("Invalid credentials");
+            props.showAlert("Invalid Credentials","danger")
         }
     }
 

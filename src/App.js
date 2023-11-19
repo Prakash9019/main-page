@@ -11,14 +11,27 @@ import {BodyTemperature,PulseRate,BreathingRate,BloodPressure} from "./Component
 import {Crp,T4,T3,Kut,Tsh,Albumin,Cbu,Gfr,Liver,Glucose,Blp,Ana,Cbc,Phtest,Put,Us} from "./Components/labtests_and_reports/labreports";
 import {BloodTest,KindeyTest,ThyroidTest,Urinanalysis} from "./Components/labtests_and_reports/labtestcategories"
 import MedicalRecords from './Components/medical_records';
+import { useState } from 'react';
+import Alert from './Components/Alert';
 function App() {
+   const [alert,setalert]=useState(null);
+   const showAlert =(msg,type)=>{
+         setalert({
+          msg:msg,
+          type:type
+         })
+         setTimeout(()=>{
+          setalert(null);
+         },1500);
+   }
   return (
    <Router>
-    <Navbar/>
+    <Navbar showAlert={showAlert}/>
+    <Alert alert={alert}/>
     <Leftview/>
     <Routes>
       <Route path="/main" element={<Main/>} />  
-        <Route path="/" element={<Main/>} />
+        <Route path="/" element={<Main showAlert={showAlert} /> } />
       <Route path="/demographs" element={<Demographs/>} />
       <Route path="/vital_sign/vitalsigns" element={<Vitalsigns/>} />
       <Route path="/vital_sign/vitalsigns/vt4" element={ <BloodPressure />} />
@@ -50,7 +63,7 @@ function App() {
        
 
        
-       <Route path='/login' element={<Login/>} />
+       <Route path='/login' element={<Login showAlert={showAlert} />} />
     </Routes>
    </Router>
   );

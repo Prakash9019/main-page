@@ -66,16 +66,18 @@ router.post('/login',[
   const {email,password}=req.body;
   try{
   let user=await User.findOne({email});
+  console.log("hi"+ user);
   if(!user){
     return res.status(400).send("please try to login with correct credentials...");
   }
- 
-  const passwordComp=bcrypt.compare(password,user.password); //compare the given password with the found password in the database
-  //console.log(passwordComp);
+ else{
+  const passwordComp= await bcrypt.compare(password,user.password); //compare the given password with the found password in the database
+  console.log(passwordComp);
   if(!passwordComp){
     sucess=false;
     return res.status(400).send("please try to login with correct credentials");
   }
+  console.log("expppp");
    const data={
     user:{
       id:user.id
@@ -85,6 +87,7 @@ router.post('/login',[
    const jwtData=jwt.sign(data,jwt_s);
    sucess=true;
    res.json({sucess,jwtData});
+  }
 
 }
 catch(error){
