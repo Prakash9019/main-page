@@ -2,7 +2,8 @@ import React, { useState,useEffect } from 'react'
 import '../App.css';
  import axios from "axios";
 import { useNavigate } from 'react-router-dom';
-
+import Tesseract from 'tesseract.js';
+import EXIF from 'exif-js';
 
 const MedicalRecords = () => {
      const [item, setItem] = useState(null);
@@ -13,9 +14,10 @@ const MedicalRecords = () => {
 
     const handleFileChange = (event) => {
            var reader=new FileReader();
+           console.log(event.target.files[0]);
         reader.readAsDataURL(event.target.files[0]);
         reader.onload=()=>{
-           // console.log(reader.result);
+           console.log(reader.result);
             setItem(reader.result);
         }
         reader.onerror=error =>{
@@ -23,6 +25,47 @@ const MedicalRecords = () => {
         };
       setSelectedFile(event.target.files[0]);
     };
+   // tesseract js 
+    // function handleImageUpload(event) {
+    //   const file = event.target.files[0];
+    
+    //   if (file) {
+    //     recognizeImage(file);
+    //   }
+    // }
+    // async function recognizeImage(imageFile) {
+    //   const { data: { text } } = await Tesseract.recognize(imageFile, 'eng');
+    //   const jsonData = { text }; // Create a JSON object with the extracted text
+
+    //   console.log("json data is"+text);
+    //   // 'text' now contains the extracted text from the image
+    //   console.log('Extracted Text:', text);
+    // }
+
+    function handleImageUpload(event) {
+      const file = event.target.files[0];
+    
+      if (file) {
+        getGeoLocationFromImage(file);
+      }
+    }
+
+
+async function getGeoLocationFromImage(imageFile) {
+  EXIF.getData(imageFile, function() {
+    const latitude = EXIF.getTag(this, 'GPSLatitude');
+    const longitude = EXIF.getTag(this, 'GPSLongitude');
+
+    if (latitude && longitude) {
+      // Latitude and Longitude are available
+      console.log('Latitude:', latitude, 'Longitude:', longitude);
+    } else {
+      // GPS information not found in the image
+      console.log('GPS information not available.');
+    }
+  });
+}
+
     
     useEffect(() => {
       const fetchImages = async () => {
@@ -108,6 +151,9 @@ const _arrayBufferToBase64 = ( buffer ) => {
      <br/>
      <br/>
      <form id="form" onSubmit={handleSubmit} >
+    // <input type="file" accept="image/*" onChange={handleImageUpload} />
+
+
         <input 
      type="file"  name='myfile'
      onChange={handleFileChange}
